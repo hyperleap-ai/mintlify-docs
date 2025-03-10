@@ -1,0 +1,183 @@
+---
+title: 'Conversations Overview'
+description: 'Overview of the Conversations API endpoints'
+---
+
+The Conversations API allows you to create and manage AI conversations. You can create general or persona conversations, continue existing conversations, and manage conversation metadata.
+
+## Available Endpoints
+
+## Creating Conversations
+
+#### [Create a General Conversation](/api-ref/conversations/create-a-general-conversation)
+
+Create a new general conversation with a specified AI system and model.
+
+```
+POST /conversations
+```
+
+**Basic Request Format:**
+```json
+{
+  "system": "string",
+  "model": "string",
+  "externalUserId": "string"
+}
+```
+
+#### [Create a Persona Conversation](/api-ref/conversations/create-a-persona-conversation)
+
+Create a new conversation with a specific persona, which has predefined characteristics and behavior.
+
+```
+POST /conversations/persona
+```
+
+**Basic Request Format:**
+```json
+{
+  "personaId": "string",
+  "externalUserId": "string"
+}
+```
+
+<Tip>
+  When creating a conversation, store the `conversationId` from the response. You'll need this ID for continuing the conversation and managing its metadata in subsequent API calls.
+</Tip>
+
+### Continuing Conversations
+
+#### [Continue Chat (Non-streaming)](/api-ref/conversations/continue-chat)
+
+Continue an existing conversation and get the complete response in a single API call.
+
+```
+POST /conversations/{conversationId}/continue
+```
+
+#### [Continue Chat (HTTP/2 Streaming)](/api-ref/conversations/continue-http2-streaming)
+
+Continue an existing conversation and stream the response using HTTP/2 protocol.
+
+```
+POST /conversations/{conversationId}/continue-stream
+```
+
+**Basic Request Format:**
+```json
+{
+  "message": "string"
+}
+```
+
+#### [Continue Chat (SSE Streaming)](/api-ref/conversations/continue-sse-streaming)
+
+Continue an existing conversation and stream the response using Server-Sent Events (SSE) protocol.
+
+```
+POST /conversations/{conversationId}/continue-sse
+```
+
+**Basic Request Format:**
+```json
+{
+  "message": "string"
+}
+```
+
+### Retrieving Conversations
+
+#### [Get All Conversations](/api-ref/conversations/get-all-conversations)
+
+Retrieve all conversations for the organization.
+
+```
+GET /conversations
+```
+
+#### [Get User Conversations](/api-ref/conversations/get-user-conversations)
+
+Retrieve all conversations for the current user.
+
+
+```
+GET /conversations/user/{externalUserId}
+```
+
+#### [Get All Conversations with a Persona](/api-ref/conversations/get-all-conversations-with-a-persona)
+
+Retrieve all conversations with a specific persona.
+
+```
+GET /conversations/persona/{personaId}
+```
+
+#### [Get Specific Conversation](/api-ref/conversations/get-specific-conversation)
+
+Retrieve a specific conversation by ID.
+
+```
+GET /conversations/{conversationId}
+```
+
+### Managing Conversations
+
+#### [Set Conversation as Active](/api-ref/conversations/set-conversation-as-active)
+
+Mark a conversation as active.
+
+```
+PATCH /conversations/{conversationId}/set-active
+```
+
+#### [Set Conversation's Metadata](/api-ref/conversations/set-conversations-metadata)
+
+Update the metadata for a conversation.
+
+```
+PATCH /conversations/{conversationId}/set-metadata
+```
+
+#### [Set Conversation's Name](/api-ref/conversations/set-conversations-name)
+
+Update the name of a conversation.
+
+```
+PATCH /conversations/{conversationId}/set-conversation-name
+```
+
+#### [Set Conversation's Status](/api-ref/conversations/set-conversations-status)
+
+Update the status of a conversation.
+
+```
+PATCH /conversations/{conversationId}/set-conversation-status
+```
+
+<RequestExample>
+
+```js ENDPOINTS
+// Creating Conversations
+POST /conversations
+POST /conversations/persona
+
+// Continuing Conversations
+PATCH /conversations/{conversationId}/chat
+PATCH /conversations/{conversationId}/chat-http2
+PATCH /conversations/{conversationId}/chat-sse
+
+// Retrieving Conversations
+GET /conversations
+GET /conversations/user/{externalUserId}
+GET /conversations/persona/{personaId}
+GET /conversations/{conversationId}
+
+// Managing Conversations
+PATCH /conversations/{conversationId}/set-active
+PATCH /conversations/{conversationId}/set-metadata
+PATCH /conversations/{conversationId}/set-conversation-name
+PATCH /conversations/{conversationId}/set-conversation-status
+```
+
+</RequestExample>

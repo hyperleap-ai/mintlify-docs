@@ -1,0 +1,188 @@
+---
+title: 'Create and Configure Prompt'
+description: 'Learn how to create and set up your AI prompts in Hyperleap'
+---
+
+## Creating Your First Prompt
+
+Follow these steps to create and configure a prompt in Hyperleap:
+
+<Steps>
+  <Step title="Get Started">
+There are two ways to create a prompt
+
+    <Tabs>
+      <Tab title="Start from Scratch">
+        Start creating your Prompt from Prompt Playground
+        
+        <Frame>
+          <img 
+            src="/images/prompts/prompt-pg.png" 
+            alt="Creating a blank prompt" 
+            width="800"
+          />
+        </Frame>
+      </Tab>
+      <Tab title="Use Template">
+        Choose pre-configured Prompt from Prompt Library
+        
+        <Frame>
+          <img 
+            src="/images/prompts/prompt-library.png" 
+            alt="Selecting a prompt from prompt library" 
+            width="800"
+          />
+        </Frame>
+        <Frame>
+          <img 
+            src="/images/prompts/import-prompt.png" 
+            alt="importing a prompt" 
+            width="800"
+          />
+        </Frame>
+      </Tab>
+    </Tabs>
+  </Step>
+
+  <Step title="Configure Replacements">
+    Define or update your Prompt input. You can include dynamic variables (e.g. `{{variable_name}}`) that will be replaced with actual values when the Prompt is used.
+    
+    - Use `{{variable_name}}` syntax for replacements
+    <Note>
+    To learn more about replacements, check out the [Replacements](/guides/replacements) guide.
+    </Note>
+
+    <Frame>
+      <img 
+        src="/images/prompts/add-replacements.png" 
+        alt="Adding dynamic variables" 
+        width="800"
+      />
+    </Frame>
+
+  </Step>
+
+  <Step title="Configure Settings">
+    <AccordionGroup>
+      <Accordion title="Set AI Model" icon="microchip">
+        Choose the AI model that best fits your use case:
+        <Frame>
+          <img 
+            src="/images/prompts/set-model.png" 
+            alt="Setting AI model" 
+            width="800"
+          />
+        </Frame>
+      </Accordion>
+
+      <Accordion title="Attach Sources" icon="database">
+        Connect your data sources to ground AI responses:
+        - Add documents, website URLs, or text content
+        <Note>
+        To learn more about sources, check out the [Sources](/guides/sources) guide.
+        </Note>
+        <Frame>
+          <img 
+            src="/images/prompts/sources.png" 
+            alt="Attaching data sources" 
+            width="800"
+          />
+        </Frame>
+      </Accordion>
+
+      <Accordion title="Adjust Configurations" icon="sliders">
+        Fine-tune your prompt settings:
+        <Frame>
+          <img 
+            src="/images/prompts/adjust-configuration.png" 
+            alt="Adjusting configurations" 
+            width="800"
+          />
+        </Frame>
+      </Accordion>
+
+      <Accordion title="Import Prompts" icon="file-import">
+        Import and customize pre-configured prompts:
+        - Browse prompt library
+        - Import custom prompts
+        - Modify for your needs
+        
+        <Frame>
+          <img 
+            src="/images/prompts/import-prompts.png" 
+            alt="Importing prompts" 
+            width="800"
+          />
+        </Frame>
+      </Accordion>
+    </AccordionGroup>
+  </Step>
+
+  <Step title="Test Prompt">
+    Test your prompt configuration in the playground:
+    - Enter dynamic values
+    - View generated responses
+    
+    <Frame>
+      <img 
+        src="/images/prompts/generate-response.png" 
+        alt="Generating response" 
+        width="800"
+      />
+    </Frame>
+    <Frame>
+      <img 
+        src="/images/prompts/enter-inputs.png" 
+        alt="Entering values" 
+        width="800"
+      />
+    </Frame>
+  </Step>
+  
+  <Step title="Compare Models">
+    Compare the performance of different AI models:
+    - View response quality
+    - Adjust configurations
+    - Analyze response time
+    <Frame>
+      <img 
+        src="/images/prompts/compare-models.png" 
+        alt="Comparing models" 
+        width="800"
+      />
+    </Frame>
+  </Step>
+
+  <Step title="Save and Activate">
+    Finalize your prompt configuration:
+    - Save as draft to continue editing and share with your team later
+    - Publish to make it available to your team
+    
+    <Frame>
+      <img 
+        src="/images/prompts/save-prompt.png" 
+        alt="Saving and activating prompt" 
+        width="800"
+      />
+    </Frame>
+  </Step>
+</Steps>
+
+## What's Next?
+
+<CardGroup cols={2}>
+  <Card
+    title="Prompt Library"
+    icon="book-open"
+    href="https://studio.hyperleapai.com/prompt-library"
+  >
+    Browse our library of pre-built prompt templates
+  </Card>
+  <Card
+    title="API Reference"
+    icon="code"
+    href="/api-ref/prompts/overview"
+  >
+    View complete API documentation for prompts
+  </Card>
+</CardGroup> 

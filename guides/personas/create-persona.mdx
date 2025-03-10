@@ -1,0 +1,194 @@
+---
+title: 'Create and Configure Persona'
+description: 'Learn how to create and set up your AI personas in Hyperleap'
+---
+
+Follow these steps to create and configure a persona in Hyperleap:
+
+<Steps>
+  <Step title="Get Started">
+    There are two ways to create a persona:
+
+    <Tabs>
+      <Tab title="Start from Scratch">
+        Start creating your Persona from Persona Playground
+        
+        <Frame>
+          <img 
+            src="/images/personas/persona-pg.png" 
+            alt="Creating a new persona from persona playground" 
+            width="800"
+          />
+        </Frame>
+      </Tab>
+      <Tab title="Use Template">
+        Choose pre-configured persona from persona library
+        
+        <Frame>
+          <img 
+            src="/images/personas/persona-library.png" 
+            alt="Selecting a persona from persona library" 
+            width="800"
+          />
+        </Frame>
+        <Frame>
+          <img 
+            src="/images/personas/import-persona-library.png" 
+            alt="import persona from persona library" 
+            width="800"
+          />
+        </Frame>
+      </Tab>
+    </Tabs>
+  </Step>
+
+ <Step title="Define Behaviour">
+    Define or update your Persona's behavior. You can include dynamic variables (e.g. `{{variable_name}}`) that will be replaced with actual values when the Persona is used.
+
+    - Use `{{variable_name}}` syntax for replacements
+
+    <Note>
+    To learn more about replacements, check out the [Replacements](/guides/replacements) guide.
+    </Note>
+
+    <Frame>
+      <img 
+        src="/images/personas/enter-input.png" 
+        alt="Defining persona behaviour" 
+        width="800"
+      />
+    </Frame>
+
+</Step>
+
+  <Step title="Configure Persona">
+    Configure the core aspects of your persona:
+    <AccordionGroup>
+      <Accordion title="Set AI Model" icon="microchip">
+        Choose the AI model that best fits your use case:
+        
+        <Frame>
+          <img 
+            src="/images/personas/set-model.png" 
+            alt="Setting AI model" 
+            width="800"
+          />
+        </Frame>
+      </Accordion>
+
+      <Accordion title="Add Sources" icon="database">
+        Connect your data sources to ground AI responses:
+        - Upload documents, website URLs, or text content
+        <Note>
+        To learn more about Sources, check out the [Sources](/guides/sources) guide.
+        </Note>
+        
+        <Frame>
+          <img 
+            src="/images/personas/sources.png" 
+            alt="Adding sources" 
+            width="800"
+          />
+        </Frame>
+      </Accordion>
+
+      <Accordion title="Adjust Configuration Parameters" icon="sliders">
+        Fine-tune your persona settings:
+        - Response format and style
+        - Temperature and other parameters
+        
+        <Frame>
+          <img 
+            src="/images/personas/adjust-configuration.png" 
+            alt="Adjusting configurations" 
+            width="800"
+          />
+        </Frame>
+      </Accordion>
+
+      <Accordion title="Import Pre-configured Personas" icon="file-import">
+        Import and customize existing personas:
+        - Browse persona library
+        - Import custom personas
+        - Modify for your needs
+        
+        <Frame>
+          <img 
+            src="/images/personas/import-persona.png" 
+            alt="Importing personas" 
+            width="800"
+          />
+        </Frame>
+      </Accordion>
+    </AccordionGroup>
+  </Step>
+
+  <Step title="Test Interactions">
+    Validate your persona's behavior in the playground:
+    - Test different scenarios
+    - Verify knowledge accuracy
+    - Check response consistency
+    
+    <Frame>
+      <img 
+        src="/images/personas/test-behaviour.png" 
+        alt="Testing persona" 
+        width="800"
+      />
+    </Frame>
+  </Step>
+
+  <Step title="Compare Models">
+    Compare the performance of different AI models:
+    - View response quality
+    - Adjust configurations
+    - Analyze response time
+    <Frame>
+      <img 
+        src="/images/personas/compare-test.png" 
+        alt="Configure and compare models" 
+        width="800"
+      />
+    </Frame>
+    <Frame>
+      <img 
+        src="/images/personas/compare-response.png" 
+        alt="Compare response" 
+        width="800"
+      />
+    </Frame>
+  </Step>
+
+  <Step title="Save and Publish">
+    Finalize your persona configuration:
+    - Save as draft to continue editing and share with your team later
+    - Publish to make it available to your team
+    
+    <Frame>
+      <img 
+        src="/images/personas/save-draft.png" 
+        alt="Save and publish persona" 
+        width="800"
+      />
+    </Frame>
+  </Step>
+</Steps>
+
+## What's Next?
+
+<CardGroup cols={2}>
+  <Card
+    title="API Reference"
+    icon="code"
+    href="/api-ref/conversations/overview"
+  >
+    Learn how to integrate personas programmatically using our API
+  </Card>
+  <Card
+    title="View Templates"
+    icon="users"
+    href="https://studio.hyperleapai.com/persona-library"
+  >
+    Explore our library of pre-built personas
+  </Card>
+</CardGroup>

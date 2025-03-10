@@ -1,0 +1,65 @@
+---
+title: 'API Keys'
+description: 'How to obtain and use API keys for authentication'
+icon: 'key'
+---
+
+API keys allow you to access Hyperleap's AI features programmatically. With a single key, you can run prompts, create conversations, and use personas directly in your applications—making it simple to add powerful AI capabilities to your products.
+
+## Obtaining an API Key
+
+You can obtain your API key from [Studio](https://studio.hyperleapai.com) by following these steps: 
+
+<Steps>
+  <Step title="Go to API Console">
+    Go to **Manage** > [**API Keys**](https://studio.hyperleapai.com/api-keys) 
+
+    <Frame>
+      <img
+        src="/images/create-api-key.png"
+        alt="Create API Key on studio"
+        width="1468"
+        height="249"
+      />
+    </Frame>
+
+  </Step>
+  <Step title="Create API Key">
+    Configure the label and click on the "Create" button.
+
+    <Frame>
+      <img
+        src="/images/configure-create.png"
+        alt="configure label and create api key"
+        width="1468"
+        height="249"
+      />
+    </Frame>
+
+  </Step>
+  <Step title="Copy API Key">
+    Click on the **Continue** button to create the key. Make sure to copy your API key and store it in a safe place. You won't be able to see it again.
+
+     <Frame>
+      <img
+        src="/images/copy-api-key.png"
+        alt="API Key created on Hyperleap"
+      />
+    </Frame>
+  </Step>
+</Steps>
+
+## Using Your API Key
+
+To authenticate API requests, include your API key in the `x-hl-api-key` header:
+
+```
+x-hl-api-key: <your_api_key>
+```
+
+Example request using cURL:
+
+```bash
+curl -X GET "https://api.hyperleapai.com/conversations" \
+  -H "x-hl-api-key: your_api_key_here"
+```

@@ -1,0 +1,79 @@
+---
+title: 'Errors'
+description: 'Troubleshoot problems with this comprehensive breakdown of all error codes.'
+icon: 'bug'
+---
+
+
+## Error Format
+
+The error response body returned by API follows this format:
+
+```json
+{
+  "error": {
+    "code": "error_code",
+    "message": "A human-readable description of the error",
+    "details": [
+      {
+        "field": "field_name",
+        "issue": "Description of the issue with this field"
+      }
+    ]
+  }
+}
+```
+
+The `details` array is optional and only included for validation errors to indicate which fields had issues.
+
+## Error Codes
+
+Here is a list of all error codes API returns:
+
+### `bad_request`
+
+- **Status:** 400
+- **Problem:** The request is malformed, either missing required fields, using wrong datatypes, or being syntactically incorrect.
+- **Suggested Action:** Check the request and make sure it is properly formatted.
+
+### `unauthorized`
+
+- **Status:** 401
+- **Problem:** The request has not been applied because it lacks valid authentication credentials for the target resource.
+- **Suggested Action:** Make sure you are using the correct API key
+
+### `forbidden`
+
+- **Status:** 403
+- **Problem:** The server understood the request, but is refusing to fulfill it because the client lacks proper permission.
+- **Suggested Action:** Make sure you have the necessary permissions to access the resource.
+
+### `not_found`
+
+- **Status:** 404
+- **Problem:** The server has not found anything matching the request URI.
+- **Suggested Action:** Check the request and make sure the resource exists.
+
+### `conflict`
+
+- **Status:** 409
+- **Problem:** Another resource already uses the same identifier. For example, workspace slug must be unique.
+- **Suggested Action:** Change the identifier to a unique value.
+
+### `invite_expired`
+
+- **Status:** 410
+- **Problem:** The invite has expired.
+- **Suggested Action:** Generate a new invite.
+
+### `unprocessable_entity`
+
+- **Status:** 422
+- **Problem:** The server was unable to process the request because it contains invalid data.
+- **Suggested Action:** Check the request and make sure input data is valid.
+
+### `internal_server_error`
+
+- **Status:** 500
+- **Problem:** The server encountered an unexpected condition that prevented it from fulfilling the request.
+- **Suggested Action:** Try again later. If the problem persists, contact support.

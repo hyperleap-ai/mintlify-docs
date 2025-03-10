@@ -1,0 +1,9 @@
+.hero-section {
+  background-color: #f0fdf4;
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero-section {
+    background-color: #0c1e1e;
+  }
+} 

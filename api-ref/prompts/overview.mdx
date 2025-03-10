@@ -1,0 +1,93 @@
+---
+title: 'Prompts Overview'
+description: 'Overview of the Prompts API endpoints'
+---
+
+The Prompts API allows you to run AI prompts with your project. You can trigger prompts with different streaming options based on your application needs.
+
+## Available Endpoints
+
+### [Run Prompt (Non-streaming)](/api-ref/prompts/run-prompt-non-streaming)
+
+Run a specific prompt and get the complete response in a single API call.
+<Tip>
+    Recommended when creating classifiers to make decisions, since the full response is available for decision making.
+</Tip>
+
+```
+POST /prompt-runs/run-sync
+```
+
+#### Request Format
+
+```json
+{
+  "promptId": "string", 
+  "promptVersionId": "string", 
+  "replacements": { 
+    "key1": "value1",
+    "key2": "value2"
+  }
+}
+```
+
+#### Response Format
+Returns a complete JSON response
+ 
+### [Run Prompt (HTTP/2 Streaming)](/api-ref/prompts/run-prompt-http2-streaming)
+
+Run a specific prompt and stream the response using HTTP/2 protocol. This is useful for real-time applications where you want to display the response as it's being generated.
+
+```
+POST /prompt-runs/async
+```
+
+#### Request Format
+
+```json
+{
+  "promptId": "string",
+  "promptVersionId": "string",
+  "replacements": { 
+    "key1": "value1",
+    "key2": "value2"
+  }
+}
+```
+
+#### Response Format
+Streams chunks of data as they become available.
+
+### [Run Prompt (SSE Streaming)](/api-ref/prompts/run-prompt-sse-streaming)
+
+Run a specific prompt and stream the response using Server-Sent Events (SSE) protocol. This is useful for web applications that need to display the response as it's being generated.
+
+```
+POST /prompt-runs/run-sse
+```
+
+#### Request Format
+
+```json
+{
+  "promptId": "string",
+  "promptVersionId": "string",
+  "replacements": { 
+    "key1": "value1",
+    "key2": "value2"
+  }
+}
+```
+
+#### Response Format
+Streams events with data as they become available.
+
+
+<RequestExample>
+
+```js ENDPOINTS
+POST /prompt-runs/run-sync
+POST /prompt-runs/async
+POST /prompt-runs/run-sse
+```
+</RequestExample>

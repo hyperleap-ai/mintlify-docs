@@ -1,0 +1,132 @@
+---
+title: 'Audit Report Overview'
+description: 'Overview of the Audit Report API endpoints'
+---
+
+## Introduction
+The Audit Report API allows you to retrieve detailed information about AI interactions with conversations and prompt runs for auditing and compliance purposes.
+
+- Conversations
+- Conversation run details
+- Prompt runs
+- Prompt run details
+
+## Available Endpoints
+
+### [Conversations](/api-ref/audit-report/conversations)
+
+Retrieve audit information about conversations based on filter conditions passed.
+
+```
+POST /audit/conversations
+```
+
+**Basic Response Format:**
+```json
+{
+  "conversations": [
+    {
+      "id": "string",
+      "name": "string",
+      "createdAt": "string",
+      "updatedAt": "string",
+      "externalUserId": "string"
+    }
+  ],
+  "total": 0
+}
+```
+
+### [Conversation Run Details](/api-ref/audit-report/conversation-run-details)
+
+Retrieve detailed audit information about a specific conversation run based on the conversation id.
+
+```
+GET /audit/conversations/{conversationId}
+```
+**Basic Response Format:**
+```json
+{
+  "id": "string",
+  "conversationId": "string",
+  "messages": [
+    {
+      "role": "user|assistant",
+      "content": "string",
+      "timestamp": "string"
+    }
+  ],
+  "metadata": {
+    "key": "value"
+  }
+}
+```
+
+### [Prompt Runs](/api-ref/audit-report/prompt-runs)
+
+Retrieve audit information about prompt runs based on filter conditions passed.
+
+```
+POST /audit/prompt-runs
+```
+
+**Basic Response Format:**
+```json
+{
+  "promptRuns": [
+    {
+      "id": "string",
+      "promptId": "string",
+      "promptVersionId": "string",
+      "createdAt": "string",
+      "status": "string"
+    }
+  ],
+  "total": 0
+}
+```
+
+### [Prompt Run Details](/api-ref/audit-report/prompt-run-details)
+
+Retrieve detailed audit information about a specific prompt run based on the prompt run id.
+
+```
+GET /audit/prompt-runs/{promptRunId}
+```
+
+**Basic Response Format:**
+```json
+{
+  "id": "string",
+  "promptId": "string",
+  "promptVersionId": "string",
+  "input": {
+    "replacements": {
+      "key": "value"
+    }
+  },
+  "output": "string",
+  "createdAt": "string",
+  "completedAt": "string",
+  "status": "string"
+}
+```
+
+## Use Cases
+
+- Compliance reporting
+- Quality assurance
+- Performance analysis
+- Security auditing
+- Debugging and troubleshooting 
+
+
+<RequestExample>
+
+```js ENDPOINTS
+POST /audit/conversations
+GET /audit/conversations/{conversationId}
+POST /audit/prompt-runs
+GET /audit/prompt-runs/{promptRunId}
+```
+</RequestExample>

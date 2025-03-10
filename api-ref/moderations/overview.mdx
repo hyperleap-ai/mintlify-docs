@@ -1,0 +1,48 @@
+---
+title: 'Moderations Overview'
+description: 'Overview of the Moderations API endpoints'
+---
+
+Moderations API allows you to check content for potentially harmful or inappropriate material. This helps ensure that AI interactions remain safe and compliant with content policies.
+
+API can be used to:
+- Check text content for potentially harmful material
+- Identify specific categories of harmful content
+- Get confidence scores for moderation decisions
+
+## Available Endpoints
+
+### [Moderations Check](/api-ref/moderations/moderations-check)
+
+Check content for potentially harmful or inappropriate material.
+
+```
+POST /moderations
+```
+
+#### Request Format
+
+Request includes the input text to be moderated.
+
+```json
+{
+  "input": "string"
+}
+```
+
+#### Response Format
+
+The response includes:
+
+- Overall moderation decision (flagged/not flagged)
+- Category-specific flags (e.g., violence, hate speech, sexual content)
+- Confidence scores for each category
+- Highlighted sections of concerning content
+
+## Use Cases
+
+- Preventing harmful content in AI responses
+- Filtering user inputs for inappropriate material
+- Ensuring compliance with content policies
+- Creating safe AI interactions for all users
+- Protecting brand reputation 

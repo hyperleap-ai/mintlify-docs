@@ -1,0 +1,258 @@
+---
+title: 'Working with Sources'
+description: 'Learn how to use Sources to ground your AI with contextual knowledge'
+icon: "database"
+---
+
+Sources in Hyperleap allow you to add business documents, websites, and text content to create contextually aware AI responses. Our advanced retrieval engine (RAG) automatically processes and indexes your content, ensuring your AI delivers accurate, relevant responses grounded in your business context.
+
+## How Sources Work
+
+Here's how Sources power your AI interactions:
+
+<CardGroup cols={2}>
+  <Card title="Content Processing" icon="file-import">
+    Upload your documents, add URLs, or input text. Our system automatically processes and indexes your content for optimal retrieval.
+  </Card>
+  
+  <Card title="Smart Indexing" icon="brain">
+    Advanced RAG (Retrieval Augmented Generation) technology analyzes and organizes your content for contextual understanding.
+  </Card>
+
+  <Card title="Contextual Retrieval" icon="magnifying-glass-chart">
+    During AI interactions, relevant information is automatically retrieved and incorporated into responses.
+  </Card>
+
+  <Card title="Cross-Feature Integration" icon="arrows-to-circle">
+    Sources work seamlessly across prompts and personas, maintaining consistency in all AI interactions.
+  </Card>
+</CardGroup>
+
+## Supported Content Types
+
+<AccordionGroup>
+  <Accordion title="Documents" icon="file-lines">
+    - PDF files
+    - Word documents
+    - Text files
+    - Spreadsheets
+    
+    <Note>
+      Maximum file size: 1MB per document for free tier. Higher limits available in paid plans - see [pricing](https://hyperleapai.com/pricing) for details.
+    </Note>
+  </Accordion>
+
+  <Accordion title="Web Content" icon="globe">
+    - Website URLs
+    - Web pages
+    - Online documentation
+  </Accordion>
+
+  <Accordion title="Direct Text" icon="text">
+    - Custom text input
+    - Code snippets
+    - Business rules
+    - Product information
+  </Accordion>
+</AccordionGroup>
+
+## Adding Sources
+
+<Steps>
+<Step title="Create a Source">
+    Navigate to the Sources section in your Api-Console and click on the "Create Source" button.
+  <Frame>
+    <img 
+      src="/images/sources/create-source.png" 
+      alt="Create source" 
+      width="800"
+    />
+  </Frame>
+</Step>
+
+  <Step title="Add Content">
+    Choose your content addition method:
+    
+    <Tabs>
+      <Tab title="Upload Documents">
+        Drag and drop files or use the file picker
+        
+        <Frame>
+          <img 
+            src="/images/sources/upload-doc.png" 
+            alt="Uploading documents" 
+            width="800"
+          />
+        </Frame>
+        <Frame>
+          <img 
+            src="/images/sources/configure-upload-doc.png" 
+            alt="Configure details and upload document" 
+            width="800"
+          />
+        </Frame>
+      </Tab>
+      <Tab title="Add URLs">
+        Enter website URLs to index web content
+        
+        <Frame>
+          <img 
+            src="/images/sources/add-website.png" 
+            alt="Adding website" 
+            width="800"
+          />
+        </Frame>
+        <Frame>
+          <img 
+            src="/images/sources/configure-add-website.png" 
+            alt="Configure details and add website" 
+            width="800"
+          />
+        </Frame>
+      </Tab>
+      <Tab title="Direct Input">
+        Type or paste text content directly
+        
+        <Frame>
+          <img 
+            src="/images/sources/add-text.png" 
+            alt="Direct text input" 
+            width="800"
+          />
+        </Frame>
+        <Frame>
+          <img 
+            src="/images/sources/configure-add-text.png" 
+            alt="Configure details and add text" 
+            width="800"
+          />
+        </Frame>
+      </Tab>
+    </Tabs>
+  </Step>
+
+
+  <Step title="Test Source Integration">
+    Chat with your source to verify content understanding and relevance:
+    
+    <Tabs>
+      <Tab title="Chat with Source">
+        Test how your AI understands and uses the source content
+        
+        <Frame>
+          <img 
+            src="/images/sources/chat-source.png" 
+            alt="Chatting with source" 
+            width="800"
+          />
+        </Frame>
+        <Frame>
+          <img 
+            src="/images/sources/ask-source.png" 
+            alt="Ask source" 
+            width="800"
+          />
+        </Frame>
+      </Tab>
+      <Tab title="Source Types">
+        Test specific source types individually:
+        - Documents
+        - Website URLs
+        - Text content
+        
+        <Frame>
+          <img 
+            src="/images/sources/chat-source-type.png" 
+            alt="Chat with individual source types" 
+            width="800"
+          />
+        </Frame>
+      </Tab>
+    </Tabs>
+
+    <Note>
+      Free plan users can create one source. [Upgrade your plan](https://hyperleapai.com/pricing) to create multiple sources and unlock advanced features.
+    </Note>
+  </Step>
+
+  <Step title="Share and Use">
+    Your source is now ready to power AI features across your teamspace:
+
+    <CardGroup cols={2}>
+      <Card title="Attach to Features" icon="puzzle-piece">
+        Add your source to:
+        - Prompts
+        - Personas
+        - Tools
+        - Assistants
+      </Card>
+      <Card title="Team Access" icon="users">
+        All teamspace members can use sources to:
+        - Build AI features
+        - Create conversations
+        - Generate responses
+      </Card>
+    </CardGroup>
+
+    <Note>
+      Sources are shared across your teamspace, enabling consistent AI responses grounded in your organization's knowledge.
+    </Note>
+  </Step>
+</Steps>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Processing Issues" icon="triangle-exclamation">
+    **Issue**: Content not being processed correctly
+    
+    **Solutions**:
+    - Verify file format compatibility
+    - Check file size limits
+    - Ensure clean, readable content
+    - Try breaking large files into smaller chunks
+  </Accordion>
+
+  <Accordion title="Retrieval Problems" icon="circle-question">
+    **Issue**: AI not using source content effectively
+    
+    **Solutions**:
+    - Review content organization
+    - Try Re-Indexing the source
+    - Verify content relevance
+    - Test with specific queries
+  </Accordion>
+
+  <Accordion title="Integration Challenges" icon="plug">
+    **Issue**: Sources not working with prompts or personas
+    
+    **Solutions**:
+    - Verify source activation
+    - Review access permissions
+    - Test in playground first
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Create Prompts"
+    icon="wand-magic-sparkles"
+    href="/guides/prompts"
+  >
+    Learn how to use sources in your prompts
+  </Card>
+  <Card
+    title="Configure Personas"
+    icon="user-gear"
+    href="/guides/personas"
+  >
+    Add sources to power your personas
+  </Card>
+</CardGroup>
+
+## Need Help?
+
+- Check our [FAQ](/guides/faq)
+- Contact [Support](mailto:support@hyperleap.ai)

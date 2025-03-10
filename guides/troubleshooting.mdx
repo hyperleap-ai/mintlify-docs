@@ -1,0 +1,401 @@
+---
+title: 'Troubleshooting'
+description: 'Resolve common issues when using Hyperleap Studio API'
+---
+
+## API Connection Issues
+
+### Connection Timeouts
+
+**Symptoms:**
+- Requests to the API time out
+- Error messages indicating connection issues
+- Intermittent connectivity
+
+**Possible Causes:**
+- Network firewall blocking API requests
+- Proxy server configuration issues
+- Rate limiting on your network
+- Server-side issues
+
+**Solutions:**
+1. Check if your network allows outbound connections to `*.hyperleapai.com`
+2. Ensure your proxy configuration includes proper authentication if required
+3. Try connecting from a different network to isolate the issue
+4. Verify your API key is valid and has not expired
+5. Implement retry logic with exponential backoff
+6. For streaming endpoints (SSE), ensure your network supports persistent connections
+
+### CORS Errors
+
+**Symptoms:**
+- Browser console shows CORS-related errors
+- API requests fail from browser applications
+- Error message: "Access to fetch at 'https://api.hyperleapai.com' from origin 'your-domain' has been blocked by CORS policy"
+
+**Possible Causes:**
+- Missing or incorrect CORS headers in your requests
+- Attempting to call the API directly from a browser without proper configuration
+
+**Solutions:**
+1. Use a server-side proxy to make API requests
+2. Ensure your application is on an allowed domain
+3. Contact support if you need your domain added to the allowed origins list
+4. For browser applications, consider using our client-side SDK which handles CORS issues
+
+### SSL/TLS Certificate Issues
+
+**Symptoms:**
+- Error messages about invalid certificates
+- Security warnings in your browser or application
+- Connection failures with SSL/TLS errors
+
+**Possible Causes:**
+- Outdated SSL/TLS configuration
+- Certificate validation issues
+- Proxy server intercepting and modifying SSL connections
+
+**Solutions:**
+1. Update your SSL/TLS libraries to the latest version
+2. Ensure your system trusts the necessary root certificates
+3. Check if your proxy server is properly handling SSL connections
+4. Verify that your client supports TLS 1.2 or higher
+
+## Authentication Issues
+
+### Invalid API Key
+
+**Symptoms:**
+- 401 Unauthorized responses
+- Error message: "Invalid API key"
+- Authentication failures
+- Error code: `INVALID_API_KEY`
+
+**Possible Causes:**
+- Incorrect API key
+- Expired API key
+- API key with insufficient permissions
+- Missing API key header
+
+**Solutions:**
+1. Verify your API key in the Hyperleap Studio dashboard
+2. Generate a new API key if necessary
+3. Check that your API key has the required permissions for the endpoints you're accessing
+4. Ensure the API key is correctly formatted in the header: `x-hl-api-key: YOUR_API_KEY`
+5. For prompt-run endpoints, verify that your API key has access to the specific prompt
+
+### Rate Limiting
+
+**Symptoms:**
+- 429 Too Many Requests responses
+- Sudden failures after many successful requests
+- Error message: "Rate limit exceeded"
+- Error code: `RATE_LIMIT_EXCEEDED`
+
+**Possible Causes:**
+- Exceeding your plan's rate limits
+- Too many concurrent requests
+- Inefficient API usage patterns
+
+**Solutions:**
+1. Implement exponential backoff and retry logic
+2. Optimize your code to reduce unnecessary API calls
+3. Consider upgrading your plan for higher rate limits
+4. Batch requests when possible instead of making many individual calls
+5. Check the `retry-after` header for the recommended wait time
+6. Monitor your API usage in the dashboard to identify patterns
+
+## Payload and Request Issues
+
+### Request Payload Too Large
+
+**Symptoms:**
+- 413 Payload Too Large responses
+- Error when uploading large files or sending large requests
+- Uploads or requests fail with size-related errors
+- Error code: `PLAN_LIMIT_EXCEEDED` (556)
+
+**Possible Causes:**
+- Attempting to upload files larger than the allowed limit
+- Sending request bodies that exceed size limitations
+- Large prompt or context inputs
+- Exceeding your plan's storage or processing limits
+
+**Solutions:**
+1. Check the documentation for size limits on different endpoints
+2. Split large files into smaller chunks
+3. Compress data when possible
+4. Reduce the size of prompt inputs or context
+5. Consider upgrading your plan for higher limits
+6. For conversation endpoints, try breaking long messages into multiple shorter ones
+
+### Malformed Requests
+
+**Symptoms:**
+- 400 Bad Request responses
+- Error messages about invalid JSON or parameters
+- Unexpected validation errors
+- Error codes: `INVALID_REQUEST_FORMAT`, `MISSING_REQUIRED_PARAMETER`, `INVALID_PARAMETER_VALUE`
+
+**Possible Causes:**
+- Incorrect JSON formatting
+- Missing required parameters
+- Invalid parameter values or types
+- Unsupported content types
+
+**Solutions:**
+1. Validate your request payload before sending
+2. Check the API documentation for required parameters
+3. Ensure all parameter types match what the API expects
+4. Use a request validator or schema validation tool
+5. Verify that your content type headers are correct
+6. For prompt-run endpoints, ensure all required variables are provided
+
+### Endpoint-Specific Issues
+
+#### Prompt Run Endpoints
+
+**Common Issues:**
+- Missing prompt variables
+- Invalid prompt ID or version
+- Prompt not found
+
+**Solutions:**
+1. Verify the prompt ID and version ID in your request
+2. Check that all required variables for the prompt are provided
+3. Ensure the prompt is active and accessible with your API key
+4. For streaming endpoints, use the correct streaming format (SSE or HTTP/2)
+
+#### Conversation Endpoints
+
+**Common Issues:**
+- Invalid conversation ID
+- Expired conversations
+- Missing message content
+
+**Solutions:**
+1. Verify the conversation ID exists and is active
+2. Create a new conversation if the previous one has expired
+3. Ensure message content is provided and properly formatted
+4. For persona conversations, verify the persona ID is correct
+
+#### Feedback and Audit Endpoints
+
+**Common Issues:**
+- Invalid resource IDs
+- Missing required fields
+- Permission issues
+
+**Solutions:**
+1. Verify all resource IDs (conversation ID, prompt run ID, etc.)
+2. Ensure all required fields are provided in the request
+3. Check that your API key has permission to access these endpoints
+
+## Streaming Response Issues
+
+### Streaming Connection Failures
+
+**Symptoms:**
+- Stream unexpectedly terminates
+- Incomplete responses
+- Error messages in streaming connections
+
+**Possible Causes:**
+- Network interruptions
+- Server-side timeouts
+- Client-side processing issues
+- Firewall or proxy limitations
+
+**Solutions:**
+1. Implement proper error handling for stream interruptions
+2. Add reconnection logic for dropped streams
+3. Ensure your client can process streaming data efficiently
+4. Check for firewall or proxy settings that might interrupt long-lived connections
+5. Consider using non-streaming endpoints if your network environment doesn't support streaming well
+
+### SSE (Server-Sent Events) Issues
+
+**Symptoms:**
+- Unable to establish SSE connection
+- Events not being received
+- Parsing errors with SSE data
+
+**Possible Causes:**
+- Incorrect implementation of SSE client
+- Network or proxy issues with long-lived connections
+- Server-side event delivery problems
+
+**Solutions:**
+1. Verify your SSE client implementation follows the correct protocol
+2. Ensure your network allows persistent connections
+3. Implement proper error handling and reconnection logic
+4. Check that you're correctly parsing the SSE format (`data: {...}`)
+5. For `/conversations/{conversationId}/chat-sse` endpoint, ensure you're handling the event format correctly
+
+### HTTP/2 Streaming Issues
+
+**Symptoms:**
+- Stream doesn't start
+- Incomplete or corrupted data
+- Connection errors
+
+**Possible Causes:**
+- HTTP/2 not supported by client or proxy
+- Incorrect handling of chunked responses
+- Buffer issues
+
+**Solutions:**
+1. Verify your client supports HTTP/2
+2. Ensure proper handling of chunked transfer encoding
+3. Consider using SSE streaming instead if HTTP/2 is problematic in your environment
+4. Check that your HTTP client is configured for streaming responses
+
+## Resource and Data Issues
+
+### Resource Not Found
+
+**Symptoms:**
+- 404 Not Found responses
+- Error messages about missing resources
+- Unable to access expected data
+- Error code: `RESOURCE_NOT_FOUND`
+
+**Possible Causes:**
+- Incorrect resource identifiers
+- Resources have been deleted or moved
+- Typos in endpoint URLs or resource IDs
+
+**Solutions:**
+1. Double-check all resource IDs and endpoint URLs
+2. Verify the resource exists in your Hyperleap Studio dashboard
+3. Check for typos in resource identifiers
+4. Ensure you have permission to access the requested resource
+5. For conversation endpoints, verify the conversation hasn't been archived or deleted
+
+### Data Processing Errors
+
+**Symptoms:**
+- 500 Internal Server Error responses
+- Error messages about data processing failures
+- Unexpected results or partial data
+- Error code: `INTERNAL_ERROR`
+
+**Possible Causes:**
+- Invalid data format
+- Server-side processing issues
+- Complex queries that exceed processing limits
+
+**Solutions:**
+1. Simplify complex requests
+2. Check your data format against the API requirements
+3. Contact support with detailed information about the error
+4. Try breaking down complex operations into smaller steps
+5. Include request IDs in your support requests for faster resolution
+
+## Content Moderation Issues
+
+### Content Flagged or Rejected
+
+**Symptoms:**
+- Requests fail with moderation-related errors
+- Error codes: `CONTENT_FLAGGED`, `UNSAFE_CONTENT`, `PROHIBITED_CONTENT`
+- Responses indicating content policy violations
+
+**Possible Causes:**
+- Content violates usage policies
+- Prompt or message contains prohibited material
+- Moderation filters triggered by specific keywords or patterns
+
+**Solutions:**
+1. Review your content against our content policy
+2. Remove or modify flagged content
+3. For `/moderations` endpoint, check the response for specific categories that were flagged
+4. Consider pre-filtering user inputs before sending to the API
+5. Use the moderation endpoint to check content before sending to other endpoints
+
+## Plan and Billing Issues
+
+### Plan Limit Exceeded
+
+**Symptoms:**
+- 556 Plan Limit Exceeded responses
+- Features suddenly unavailable
+- Error messages about upgrading your plan
+- Error code: `PLAN_LIMIT_EXCEEDED`
+
+**Possible Causes:**
+- Exceeding usage limits for your current plan
+- Attempting to use features not included in your plan
+- Temporary promotional access expired
+
+**Solutions:**
+1. Review your current usage in the dashboard
+2. Upgrade your plan if you need additional resources
+3. Optimize your implementation to reduce resource usage
+4. Contact support to discuss your specific needs
+5. Check if you're using the most efficient endpoints for your use case
+
+### Account Suspension
+
+**Symptoms:**
+- Unable to access any API endpoints
+- Error messages about account status
+- All requests failing with authentication errors
+- Error code: `ACCOUNT_SUSPENDED`
+
+**Possible Causes:**
+- Billing issues
+- Terms of service violations
+- Security concerns
+
+**Solutions:**
+1. Check your billing information in the dashboard
+2. Contact support to resolve account issues
+3. Review recent account activity for unusual patterns
+4. Ensure your usage complies with our terms of service
+
+## Debugging Techniques
+
+### Logging and Monitoring
+
+**Best Practices:**
+1. Log all API requests and responses for troubleshooting
+2. Include request IDs in your logs for correlation
+3. Monitor API usage patterns to identify potential issues
+4. Set up alerts for unusual error rates or response times
+5. Track response times to identify performance bottlenecks
+6. Log both request payloads and response headers
+
+### Testing and Validation
+
+**Best Practices:**
+1. Use the API playground in the dashboard to test requests
+2. Create test environments for new integrations
+3. Validate request payloads before sending
+4. Implement comprehensive error handling in your code
+5. Test with different input sizes and types
+6. Verify streaming endpoints with appropriate tools
+
+### Client-Side Debugging
+
+**Best Practices:**
+1. Use API client tools like Postman or Insomnia for manual testing
+2. Enable verbose logging in your HTTP client
+3. Check network traffic with browser developer tools or proxies
+4. Validate your authentication headers before each request
+5. Test with minimal payloads first, then add complexity
+
+## Getting Additional Help
+
+If you've tried the solutions above and are still experiencing issues:
+
+1. Check the [Error Codes](/guides/error-codes) documentation for specific error messages
+2. Review the [FAQ](/guides/faq) for common questions and answers
+3. Contact support with detailed information about your issue:
+   - The specific API endpoint you're trying to access
+   - Complete error messages and status codes
+   - Your client environment (programming language, libraries, versions)
+   - Any recent changes to your implementation or environment
+   - Request IDs if available
+4. Join our community forum to see if others have experienced similar issues
+5. For urgent issues, include "URGENT" in your support ticket subject 

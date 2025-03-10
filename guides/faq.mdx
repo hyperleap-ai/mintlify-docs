@@ -1,0 +1,281 @@
+---
+title: 'FAQ'
+description: 'Frequently asked questions about the Hyperleap API'
+---
+
+## General Questions
+
+### Which endpoint should I use?
+
+- For running prompts (non-streaming): Use `POST /prompt-runs/run-sync`
+- For running prompts (HTTP/2 streaming): Use `POST /prompt-runs/run`
+- For running prompts (SSE streaming): Use `POST /prompt-runs/run-sse`
+- For persona conversations: Use `POST /conversations/persona`
+- For streaming chat (SSE): Use `PATCH /conversations/{conversationId}/chat-sse`
+- For non-streaming chat: Use `PATCH /conversations/{conversationId}/chat?stream=false`
+- For getting persona details: Use `GET /conversations/persona/{personaId}`
+- For content moderation: Use `POST /moderations`
+
+### How do I handle streaming responses?
+
+For SSE streaming responses (using `/chat-sse` or `/run-sse`):
+1. The response is sent as Server-Sent Events (SSE)
+2. Each event contains a chunk of the response
+3. The stream ends with a `[DONE]` message
+4. Use an SSE client or EventSource to handle the stream
+
+For HTTP/2 streaming responses (using `/prompt-runs/run`):
+1. The response is sent as chunked transfer encoding
+2. Each chunk contains a portion of the response
+3. Use an HTTP client that supports streaming responses
+4. Process chunks as they arrive for real-time display
+
+### How do I authenticate API requests?
+
+All API requests require authentication using an API key:
+1. Get your API key from the dashboard
+2. Include it in the request header: `x-hl-api-key: YOUR_API_KEY`
+3. Ensure your API key has the necessary permissions for the endpoints you're accessing
+
+### What's the difference between streaming and non-streaming endpoints?
+
+- Streaming endpoints (`/chat-sse`, `/run-sse`, `/prompt-runs/run`): 
+  - Provide real-time response chunks
+  - Better for interactive applications
+  - Use Server-Sent Events (SSE) or HTTP/2 streaming
+  - Allow for progressive rendering of responses
+
+- Non-streaming endpoints (`/chat?stream=false`, `/prompt-runs/run-sync`):
+  - Return complete response at once
+  - Better for batch processing
+  - Standard HTTP response
+  - Simpler to implement but less interactive
+
+### How do I handle errors?
+
+Our API uses standard HTTP status codes:
+- 200: Success
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 429: Rate Limit Exceeded
+- 500: Server Error
+- 556: Plan Limit Exceeded
+
+Each error response includes:
+```json
+{
+  "error": {
+    "message": "Detailed error message",
+    "code": "ERROR_CODE"
+  }
+}
+```
+
+For detailed error handling, see our [Error Codes](/guides/error-codes) documentation.
+
+## Prompt-Related Questions
+
+### How do I run a prompt with variables?
+
+To run a prompt with variables:
+1. Use the `POST /prompt-runs/run-sync` endpoint (or streaming variants)
+2. Include the prompt ID and version ID in your request
+3. Provide variables in the `variables` object:
+
+```json
+{
+  "promptId": "your-prompt-id",
+  "promptVersionId": "your-prompt-version-id",
+  "variables": {
+    "variable1": "value1",
+    "variable2": "value2"
+  }
+}
+```
+
+### What's the maximum prompt size I can send?
+
+The maximum prompt size depends on your plan:
+- Free tier: 4,000 tokens
+- Standard tier: 8,000 tokens
+- Professional tier: 16,000 tokens
+- Enterprise tier: Custom limits
+
+If you exceed these limits, you'll receive a `PLAN_LIMIT_EXCEEDED` error.
+
+### How do I track prompt usage and costs?
+
+You can track prompt usage and costs in several ways:
+1. View usage statistics in the dashboard
+2. Use the audit endpoints to get detailed usage reports
+3. Each response includes token usage information
+4. Set up usage alerts in your dashboard
+
+## Conversation-Related Questions
+
+### How long do conversations remain active?
+
+Conversations remain active for:
+- Free tier: 1 hour
+- Standard tier: 24 hours
+- Professional tier: 7 days
+- Enterprise tier: 30 days or custom
+
+After this period, you'll need to create a new conversation.
+
+### How do I continue an existing conversation?
+
+To continue an existing conversation:
+1. Use the `PATCH /conversations/{conversationId}/chat` endpoint
+2. Include the conversation ID in the URL path
+3. Provide your message in the request body
+4. Set `stream=true` or `stream=false` as needed
+
+### How do I use personas in conversations?
+
+To use personas in conversations:
+1. Use the `POST /conversations/persona` endpoint
+2. Include the persona ID in your request
+3. Provide your initial message
+4. Continue the conversation using the standard conversation endpoints
+
+### How many messages can a conversation contain?
+
+The maximum number of messages depends on your plan:
+- Free tier: 20 messages
+- Standard tier: 50 messages
+- Professional tier: 100 messages
+- Enterprise tier: Custom limits
+
+If you reach these limits, you'll need to start a new conversation.
+
+## Feedback and Audit Questions
+
+### How do I capture user feedback?
+
+To capture user feedback:
+1. For conversation feedback: Use `POST /feedback/conversation-score`
+2. For message feedback: Use `POST /feedback/message-score`
+3. For prompt run feedback: Use `POST /feedback/prompt-run-score`
+
+Include a score and optional comments in your request.
+
+### How do I access audit reports?
+
+To access audit reports:
+1. For conversation audits: Use `POST /audit/conversations`
+2. For prompt run audits: Use `POST /audit/prompt-runs`
+3. For specific prompt run details: Use `GET /audit/prompt-run/{promptRunId}`
+4. For specific conversation details: Use `GET /audit/conversation-run/{conversationRunId}`
+
+Include filter criteria in your request to narrow down results.
+
+## Content Moderation Questions
+
+### How does content moderation work?
+
+Our content moderation system:
+1. Automatically checks all inputs for prohibited content
+2. Flags content that violates our usage policies
+3. Rejects requests containing unsafe content
+4. Provides detailed information about flagged content categories
+
+### How do I check content before sending it to other endpoints?
+
+To pre-check content:
+1. Use the `POST /moderations` endpoint
+2. Include the content you want to check in the request
+3. Review the response for any flagged categories
+4. Only proceed with content that passes moderation
+
+## Technical Questions
+
+### What programming languages are supported?
+
+Our API is language-agnostic and can be used with any programming language that supports HTTP requests, including:
+- JavaScript/TypeScript
+- Python
+- Java
+- C#/.NET
+- Go
+- Ruby
+- PHP
+
+### Do you provide client libraries?
+
+Yes, we provide official client libraries for:
+- JavaScript/TypeScript
+- Python
+- Java
+- C#/.NET
+
+For other languages, you can use standard HTTP clients.
+
+### What's the recommended way to handle rate limits?
+
+To handle rate limits effectively:
+1. Implement exponential backoff and retry logic
+2. Check the `retry-after` header for guidance
+3. Optimize your code to reduce unnecessary API calls
+4. Batch requests when possible
+5. Monitor your usage to stay within limits
+
+### How do I optimize API performance?
+
+To optimize API performance:
+1. Use streaming endpoints for interactive applications
+2. Batch requests when possible
+3. Implement client-side caching where appropriate
+4. Keep prompt sizes as small as possible
+5. Use efficient data formats
+6. Consider response compression for large payloads
+
+## Billing and Plan Questions
+
+### How am I charged for API usage?
+
+API usage is charged based on:
+1. Number of API calls
+2. Token usage (input + output)
+3. Additional features used (e.g., moderation)
+
+Detailed pricing information is available on our [pricing page](https://hyperleapai.com/pricing).
+
+### What happens if I exceed my plan limits?
+
+If you exceed your plan limits:
+1. You'll receive a `PLAN_LIMIT_EXCEEDED` error
+2. Some features may become unavailable
+3. You can upgrade your plan to continue using these features
+4. Usage statistics in your dashboard will show where you're exceeding limits
+
+### How do I upgrade my plan?
+
+To upgrade your plan:
+1. Log in to your dashboard
+2. Navigate to the Billing section
+3. Select the plan that meets your needs
+4. Follow the prompts to complete the upgrade
+5. New limits will be applied immediately
+
+## Support and Resources
+
+### Where can I get help if I'm stuck?
+
+If you need assistance:
+1. Check our [documentation](https://docs.hyperleapai.com)
+2. Review the [Troubleshooting](/guides/troubleshooting) guide
+3. Contact support through your dashboard
+4. Join our community forum
+5. Email support@hyperleapai.com
+
+### Are there example applications or code samples?
+
+Yes, we provide:
+1. Code samples in our documentation
+2. Example applications on our GitHub repository
+3. Interactive examples in our API playground
+4. Tutorials for common use cases
+5. Starter templates for different programming languages

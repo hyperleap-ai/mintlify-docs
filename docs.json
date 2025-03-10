@@ -1,0 +1,179 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Hyperleap",
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#0D9373",
+    "light": "#07C983",
+    "dark": "#0D9373"
+  },
+  "navigation": {
+    "global": 
+      {
+      "anchors": [
+        {
+          "anchor": "Pricing",
+          "href": "https://hyperleapai.com/pricing",
+          "icon": "dollar-sign"
+        },
+        {
+          "anchor": "About Hyperleap",
+          "href": "https://hyperleapai.com",
+          "icon": "address-card"
+        }
+      ]
+      },
+    "tabs": [
+      {
+        "tab": "Welcome",
+        "icon": "house",
+        "pages": [
+          "temp"
+        ]
+      },
+      {
+        "tab": "Documentation",
+        "icon": "book-open",
+        "groups": [
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "introduction"
+                ]
+              },
+              {
+                "group": "Guides",
+                "pages": [
+          {
+            "group": "Prompts",
+            "icon": "wand-magic-sparkles",
+            "pages": [
+              "guides/prompts/prompts",
+              "guides/prompts/create-prompt"
+            ]
+          },
+          {
+            "group": "Personas",
+            "icon": "users",
+            "pages": [
+              "guides/personas/personas",
+              "guides/personas/create-persona"
+            ]
+          },
+              "guides/teamspace",
+              "guides/sources",
+          {
+            "group": "Help",
+            "icon": "circle-question",
+            "pages": [
+              "guides/faq",
+              "guides/troubleshooting"
+            ]
+          }
+                ]
+              }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "icon": "code",
+        "groups": [
+          {
+            "group": "API Documentation",
+            "pages": [
+              "api-ref/introduction",
+              "api-ref/api-keys",
+              "api-ref/errors",
+              {
+                "group": "Prompts",
+                "pages": [
+                  "api-ref/prompts/overview",
+                  "api-ref/prompts/run-prompt-non-streaming",
+                  "api-ref/prompts/run-prompt-http2-streaming",
+                  "api-ref/prompts/run-prompt-sse-streaming"
+                ]
+              },
+              {
+                "group": "Conversations",
+                "pages": [
+                  "api-ref/conversations/overview",
+                  "api-ref/conversations/get-all-conversations",
+                  "api-ref/conversations/create-a-general-conversation",
+                  "api-ref/conversations/create-a-persona-conversation",
+                  "api-ref/conversations/get-all-conversations-with-a-persona",
+                  "api-ref/conversations/get-user-conversations",
+                  "api-ref/conversations/continue-http2-streaming",
+                  "api-ref/conversations/continue-sse-streaming",
+                  "api-ref/conversations/continue-chat",
+                  "api-ref/conversations/get-specific-conversation",
+                  "api-ref/conversations/set-conversation-as-active",
+                  "api-ref/conversations/set-conversations-metadata",
+                  "api-ref/conversations/set-conversations-name",
+                  "api-ref/conversations/set-conversations-status"
+                ]
+              },
+              {
+                "group": "Capture Feedback",
+                "pages": [
+                  "api-ref/capture-feedback/overview",
+                  "api-ref/capture-feedback/set-conversation-score",
+                  "api-ref/capture-feedback/set-messages-score",
+                  "api-ref/capture-feedback/set-prompt-run-score"
+                ]
+              },
+              {
+                "group": "Audit Report",
+                "pages": [
+                  "api-ref/audit-report/overview",
+                  "api-ref/audit-report/conversations",
+                  "api-ref/audit-report/prompt-runs",
+                  "api-ref/audit-report/prompt-run-details",
+                  "api-ref/audit-report/conversation-run-details"
+                ]
+              },
+              {
+                "group": "Feedback Report",
+                "pages": [
+                  "api-ref/feedback-report/overview",
+                  "api-ref/feedback-report/conversations",
+                  "api-ref/feedback-report/prompt-runs"
+                ]
+              },
+              {
+                "group": "Moderations",
+                "pages": [
+                  "api-ref/moderations/overview",
+                  "api-ref/moderations/moderations-check"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "api": {
+    "mdx": {
+      "server": "https://api.hyperleapai.com"
+    }
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:gopi@hyperleap.ai"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://studio.hyperleapai.com"
+    }
+  },
+  "footer": {
+    "socials": {
+      "linkedin": "https://linkedin.com/company/hyperleapai"
+    }
+  }
+}
