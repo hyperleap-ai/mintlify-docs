@@ -1,0 +1,197 @@
+---
+title: 'Create Your First Tool'
+description: 'Learn how to create and customize AI tools for your specific business needs'
+---
+
+Follow these steps to create and configure a tool:
+
+## Prerequisites
+
+Before creating tools, ensure you have:
+- Access to [Studio](https://studio.hyperleapai.com)
+- Credits in your account
+
+
+<Steps>
+  <Step title="Get Started">
+There are two ways to create a tool
+
+    <Tabs>
+      <Tab title="Start from Scratch">
+        Start creating your Tool from Scratch
+        
+        <Frame>
+          <img 
+            src="/images/tools/design-tool.png" 
+            alt="Creating a blank tool" 
+            width="800"
+          />
+        </Frame>
+      </Tab>
+      <Tab title="Import from Library">
+        Import from Tool Library and customize it
+        
+        <Frame>
+          <img 
+            src="/images/tools/choose-library-category.png" 
+            alt="Selecting a tool from tool library" 
+            width="800"
+          />
+        </Frame>
+        <Frame>
+          <img 
+            src="/images/tools/select-library-tool.png" 
+            alt="importing a tool" 
+            width="800"
+          />
+        </Frame>
+        <Frame>
+          <img 
+            src="/images/tools/customize-tool.png" 
+            alt="importing a tool" 
+            width="800"
+          />
+        </Frame>
+      </Tab>
+    </Tabs>
+  </Step>
+
+  <Step title="Configure Replacements">
+    Define or update your Tool input. You can include dynamic variables (e.g. `{{variable_name}}`) that will be replaced with actual values when the Tool is used.
+    
+    - Use `{{variable_name}}` syntax for replacements
+    <Note>
+    To learn more about replacements, check out the [Replacements](/guides/replacements) guide.
+    </Note>
+
+    <Frame>
+      <img 
+        src="/images/tools/configure-replacements.png" 
+        alt="Adding dynamic variables" 
+        width="800"
+      />
+    </Frame>
+
+  </Step>
+
+  <Step title="Configure Settings">
+    <AccordionGroup>
+      <Accordion title="Set AI Model" icon="microchip">
+        Choose the AI model that best fits your use case:
+        <Frame>
+          <img 
+            src="/images/tools/set-ai-model.png" 
+            alt="Setting AI model" 
+            width="800"
+          />
+        </Frame>
+      </Accordion>
+
+      <Accordion title="Attach Sources" icon="database">
+        Connect your data sources to ground AI responses:
+        - Add documents, website URLs, or text content
+        <Note>
+        To learn more about sources, check out the [Sources](/guides/sources) guide.
+        </Note>
+        <Frame>
+          <img 
+            src="/images/tools/attach-sources.png" 
+            alt="Attaching data sources" 
+            width="800"
+          />
+        </Frame>
+      </Accordion>
+
+      <Accordion title="Adjust Configurations" icon="sliders">
+        Fine-tune your tool settings:
+        <Frame>
+          <img 
+            src="/images/tools/adjust-configuration.png" 
+            alt="Adjusting configurations" 
+            width="800"
+          />
+        </Frame>
+      </Accordion>
+
+      <Accordion title="Import Tools" icon="file-import">
+        Import and customize pre-configured tools:
+        - Browse tool library and select a tool
+        - Modify for your needs
+        
+        <Frame>
+          <img 
+            src="/images/tools/import-tools.png" 
+            alt="Importing tools" 
+            width="800"
+          />
+        </Frame>
+        <Frame>
+          <img 
+            src="/images/tools/select-workspace.png" 
+            alt="Importing tools" 
+            width="800"
+          />
+        </Frame>
+        <Frame>
+          <img 
+            src="/images/tools/select-tool.png" 
+            alt="Importing tools" 
+            width="800"
+          />
+        </Frame>
+      </Accordion>
+    </AccordionGroup>
+  </Step>
+
+  <Step title="Test Tool">
+    Run and Test your tool
+    - Enter dynamic values
+    - View generated responses
+    
+    <Frame>
+      <img 
+        src="/images/tools/run-tool.png" 
+        alt="Generating response" 
+        width="800"
+      />
+    </Frame>
+  </Step>
+  
+  <Step title="Save and Activate">
+    Finalize your tool configuration:
+    - Save as draft to continue editing
+    - Publish to make it available to your team or organization
+    
+    <Frame>
+      <img 
+        src="/images/tools/save-tool.png" 
+        alt="Saving and activating tool" 
+        width="800"
+      />
+    </Frame>
+  </Step>
+</Steps>
+
+
+<Note>
+  Users on the Free plan can create up to 10 tools. Upgrade your plan to create more tools and access additional features.
+</Note>
+
+## What's Next?
+
+<CardGroup cols={2}>
+  <Card
+    title="Tools Library"
+    icon="toolbox"
+    href="https://studio.hyperleapai.com/tools/explore"
+  >
+    Explore our collection of 500+ pre-built tools for various business operations
+  </Card>
+  <Card
+    title="Integrate Prompts"
+    icon="wand-magic-sparkles"
+    href="/guides/prompts/prompts"
+  >
+    Learn to integrate prompts into your products for consistent AI interactions via REST APIs. Improve user experiences with customized AI responses.
+  </Card>
+</CardGroup> 

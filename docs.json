@@ -2,15 +2,14 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "Hyperleap",
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.ico",
   "colors": {
     "primary": "#0D9373",
     "light": "#07C983",
     "dark": "#0D9373"
   },
   "navigation": {
-    "global": 
-      {
+    "global": {
       "anchors": [
         {
           "anchor": "Pricing",
@@ -23,56 +22,70 @@
           "icon": "address-card"
         }
       ]
-      },
+    },
     "tabs": [
       {
         "tab": "Welcome",
         "icon": "house",
-        "pages": [
-          "temp"
-        ]
+        "pages": ["temp"]
       },
       {
         "tab": "Documentation",
         "icon": "book-open",
         "groups": [
+          {
+            "group": "Getting Started",
+            "pages": ["introduction"]
+          },
+          {
+            "group": "Guides",
+            "pages": [
               {
-                "group": "Getting Started",
+                "group": "Chatbots",
+                "icon": "robot",
                 "pages": [
-                  "introduction"
+                  "guides/chatbots/chatbots",
+                  "guides/chatbots/create-chatbot"
                 ]
               },
               {
-                "group": "Guides",
+                "group": "Prompts",
+                "icon": "wand-magic-sparkles",
                 "pages": [
-          {
-            "group": "Prompts",
-            "icon": "wand-magic-sparkles",
-            "pages": [
-              "guides/prompts/prompts",
-              "guides/prompts/create-prompt"
-            ]
-          },
-          {
-            "group": "Personas",
-            "icon": "users",
-            "pages": [
-              "guides/personas/personas",
-              "guides/personas/create-persona"
-            ]
-          },
+                  "guides/prompts/prompts",
+                  "guides/prompts/create-prompt"
+                ]
+              },
+              {
+                "group": "Personas",
+                "icon": "users",
+                "pages": [
+                  "guides/personas/personas",
+                  "guides/personas/create-persona"
+                ]
+              },
+              {
+                "group": "Tools",
+                "icon": "screwdriver-wrench",
+                "pages": ["guides/tools/tools", "guides/tools/create-tool"]
+              },
+              {
+                "group": "Assistants",
+                "icon": "robot",
+                "pages": [
+                  "guides/assistants/assistants",
+                  "guides/assistants/create-assistant"
+                ]
+              },
               "guides/teamspace",
               "guides/sources",
-          {
-            "group": "Help",
-            "icon": "circle-question",
-            "pages": [
-              "guides/faq",
-              "guides/troubleshooting"
+              {
+                "group": "Help",
+                "icon": "circle-question",
+                "pages": ["guides/faq", "guides/troubleshooting"]
+              }
             ]
           }
-                ]
-              }
         ]
       },
       {
@@ -177,3 +190,4 @@
     }
   }
 }
+
