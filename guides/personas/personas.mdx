@@ -5,31 +5,6 @@ description: 'Learn how to create, manage, and utilize AI personas in Hyperleap'
 
 Personas are AI personalities that you can configure and integrate into your applications. They provide consistent interaction styles and behaviors by maintaining specific personality traits, expertise levels, and communication patterns. With personas, you can ensure your AI interactions align with your brand voice and communication goals across all touchpoints.
 
-## How Personas Work
-
-<CardGroup cols={2}>
-  <Card title="Personality Definition" icon="user-gear">
-    Define your AI's personality traits, expertise, and communication style for consistent interactions.
-  </Card>
-
-  <Card title="Knowledge Base" icon="brain">
-    Equip your persona with specific knowledge domains and reference materials for informed responses.
-  </Card>
-
-  <Card title="Response Patterns" icon="comments">
-    Set consistent response formats and communication patterns that match your brand voice.
-  </Card>
-
-  <Card title="Behavioral Rules" icon="list-check">
-    Define what the persona can and cannot do, ensuring appropriate and safe interactions.
-  </Card>
-</CardGroup>
-
-## Prerequisites
-
-Before creating personas, ensure you have:
-- Access to [Studio](https://studio.hyperleapai.com)
-- Sufficient credits in your account
 
 ## Working with Personas
 
@@ -37,7 +12,11 @@ Simple 4 step process to start using personas:
 
 <Steps>
   <Step title="Design Your Experience">
-    Design your product's conversational interface in our AI Console. Define conversation flows, personality traits, and response patterns. Add variables to control tone, inputs, expertise level, and behavior. Perfect for support agents, product guides, or interactive features in your products.
+    Design your product's conversational interface in our API Console.
+    - Define personality traits, expertise, and communication style or import pre-configured persona from persona library
+    - Add sources to provide context
+    - Select an AI model that fits your use case
+    - Fine tune the persona configuration
 
     <Card
       title="Detailed Guide: Create Persona"
@@ -49,13 +28,14 @@ Simple 4 step process to start using personas:
   </Step>
 
   <Step title="Test in Playground">
-    Test your persona across models and configurations, and finalize what works. Refine responses, adjust behaviors, and ensure perfect integration with your product before going live. Preview conversations exactly as users will experience them.
+    Test your persona using various models and configurations to determine the optimal setup. Refine the responses and behaviors to ensure seamless integration with your application. Preview conversations as they will appear to users.
   </Step>
 
   <Step title="Integrate & Deploy">
-    Add conversations to your product through simple REST API calls. Send user messages and context as JSON payloads while our infrastructure handles the complexities. Works with any programming language or framework you're already using.
+    Integrate conversations into your application using straightforward REST API calls. Send user messages and context as JSON payloads, allowing our infrastructure to manage the complexities. This approach is compatible with any programming language or framework.
 
     ```javascript
+    // Example API integration
     const response = await fetch('https://api.hyperleapai.com/conversations/persona', {
       method: 'POST',
       headers: {
@@ -79,10 +59,33 @@ Simple 4 step process to start using personas:
   </Step>
 
   <Step title="Monitor & Scale">
-    Get consistent, on-brand conversations that adapt to user needs. Track metrics, monitor performance, and adjust behavior without code deploys. Scale automatically as your product grows.
+    Ensure consistent conversations that adapt to user needs. Monitor performance metrics and adjust configurations without code deployments. Audit logs for each interaction are accessible, allowing for effective tracking and scaling as your product grows.
 
   </Step>
 </Steps>
+
+
+## How Personas Work
+
+Understand how personas work in Hyperleap under the hood
+
+<CardGroup cols={2}>
+  <Card title="System Initialization" icon="power">
+    The persona's core characteristics and behavioral parameters are loaded into the AI system, establishing its base personality.
+  </Card>
+
+  <Card title="Context Processing" icon="brain">
+    When interacting, the persona processes inputs through its knowledge base and configured sources, maintaining context awareness.
+  </Card>
+
+  <Card title="Response Generation" icon="message-square">
+    The AI generates responses by combining personality traits, contextual understanding, and configured behavioral rules.
+  </Card>
+
+  <Card title="Memory Management" icon="database">
+    Conversation history and key information are maintained in a dynamic memory system, enabling coherent, contextual dialogues.
+  </Card>
+</CardGroup>
 
 ## Common Use Cases
 
@@ -104,7 +107,7 @@ Simple 4 step process to start using personas:
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="Inconsistent Responses" icon="robot">
+  <Accordion title="Inconsistent Responses">
     **Issue**: Persona responses don't maintain consistent style or knowledge.
     
     **Solutions**:
@@ -114,7 +117,7 @@ Simple 4 step process to start using personas:
     - Test in different scenarios
   </Accordion>
 
-  <Accordion title="Knowledge Gaps" icon="circle-question">
+  <Accordion title="Knowledge Gaps">
     **Issue**: Persona unable to answer domain-specific questions.
     
     **Solutions**:
@@ -122,7 +125,7 @@ Simple 4 step process to start using personas:
     - Set clear domain boundaries
   </Accordion>
 
-  <Accordion title="Tone Misalignment" icon="comment-dots">
+  <Accordion title="Tone Misalignment">
     **Issue**: Persona's tone doesn't match intended personality.
     
     **Solutions**:

@@ -5,40 +5,15 @@ description: 'Learn how to create, manage, and optimize AI prompts in Hyperleap'
 
 Prompts in Hyperleap are pre-configured instructions that guide AI responses for your specific use cases. They act as templates that can be reused across your organization, ensuring consistent and accurate AI interactions while reducing prompt engineering effort.
 
-## How Prompts Work
-
-Prompts in Hyperleap follow a structured approach:
-
-<CardGroup cols={2}>
-  <Card title="Input Processing" icon="inbox-in">
-    Your prompt template receives inputs from your configured fields. These inputs are validated and prepared for processing.
-  </Card>
-
-  <Card title="Variable Substitution" icon="arrows-rotate">
-    Dynamic variables in your prompt are replaced with actual values, allowing for flexible and reusable prompt templates.
-  </Card>
-
-  <Card title="Context Integration" icon="database">
-    Relevant context from your connected data sources is incorporated, enriching the prompt with necessary background information.
-  </Card>
-
-  <Card title="AI Processing" icon="microchip">
-    The final prompt is processed by our AI engine to generate responses, leveraging advanced language models for optimal results.
-  </Card>
-</CardGroup>
-
-## Prerequisites
-
-Before creating prompts, ensure you have:
-- Access to [Studio](https://studio.hyperleapai.com)
-- Credits in your account
-
-## Working with Prompts
 
 Simple 4 step process to start using prompts
 <Steps>
   <Step title="Create and Configure">
-    Design your AI feature in our intuitive interface. Either start from scratch or use our template library. Add dynamic variables to handle user inputs, set your preferred AI model, and configure response formats. Perfect for building features like content generation, data analysis, or custom AI workflows.
+    Design your AI feature in our API Console.
+    - Define the prompt template, add dynamic variables or import pre-configured prompt from prompt library
+    - Set your preferred AI model
+    - Add Sources to provide context
+    - Fine tune the prompt configuration
 
     <Card
       title="Detailed Guide: Create and Configure Prompt"
@@ -49,13 +24,14 @@ Simple 4 step process to start using prompts
     </Card>
   </Step>
 
-  <Step title="Save and Activate">
-    Once configured, your prompt automatically gets a dedicated REST API endpoint. Each prompt can be tested in our playground before going live.
+  <Step title="Save and Test">
+    After configuration, your prompt will have a dedicated REST API endpoint. You can test each prompt in our playground prior to deployment.
+    - After testing, you can publish the prompt to your teamspace for reuse by other users
 
   </Step>
 
   <Step title="Integrate via API">
-    Make a simple REST API call from your application. Pass your variables as JSON payload and let our infrastructure handle the complexities of AI context management, token optimization, and state handling.
+    To integrate with the API, perform a REST API call from your application. Send your variables in a JSON format, and the system will handle the AI context and state management. This is compatible with any programming language or framework.
 
     ```javascript
     // Example API integration
@@ -83,10 +59,31 @@ Simple 4 step process to start using prompts
     </Note>
   </Step>
 
-  <Step title="Ship with Confidence">
-    Get consistent, production-ready responses formatted exactly as you configured. Monitor usage, track costs, and adjust prompt behavior without deploying code changes. Scale automatically as your usage grows.
+  <Step title="Deploy and Monitor">
+    Ensure your prompts deliver consistent responses as configured. You can monitor usage, track costs, and adjust settings without code changes. Access audit logs to review interactions and gather feedback for continuous improvement.
   </Step>
 </Steps>
+
+## How Prompts Work
+Understand how prompts work in Hyperleap under the hood
+
+<CardGroup cols={2}>
+  <Card title="Input Processing" icon="inbox-in">
+    Your prompt template receives inputs from your configured fields. These inputs are validated and prepared for processing.
+  </Card>
+
+  <Card title="Variable Substitution" icon="arrows-rotate">
+    Dynamic variables in your prompt are replaced with actual values, allowing for flexible and reusable prompt templates.
+  </Card>
+
+  <Card title="Context Integration" icon="database">
+    Relevant context from your connected data sources is incorporated, enriching the prompt with necessary background information.
+  </Card>
+
+  <Card title="AI Processing" icon="microchip">
+    The final prompt is processed by our AI engine to generate responses, leveraging advanced language models for optimal results.
+  </Card>
+</CardGroup>
 
 ## Common Use Cases
 
@@ -109,7 +106,7 @@ Simple 4 step process to start using prompts
 Common issues you might encounter and how to resolve them:
 
 <AccordionGroup>
-  <Accordion title="Variable Substitution Errors" icon="brackets-curly">
+  <Accordion title="Variable Substitution Errors">
     **Issue**: Prompt variables not being replaced with actual values.
     
     **Solutions**:
@@ -119,7 +116,7 @@ Common issues you might encounter and how to resolve them:
     - Use the Studio interface to validate variable substitution
   </Accordion>
 
-  <Accordion title="Context Length Exceeded" icon="text-size">
+  <Accordion title="Context Length Exceeded">
     **Issue**: Total prompt length including context exceeds model limits.
     
     **Solutions**:
@@ -129,7 +126,7 @@ Common issues you might encounter and how to resolve them:
     - Monitor token count in Studio before deployment
   </Accordion>
 
-  <Accordion title="Response Format Mismatch" icon="code-merge">
+  <Accordion title="Response Format Mismatch">
     **Issue**: AI responses not matching expected format structure.
     
     **Solutions**:

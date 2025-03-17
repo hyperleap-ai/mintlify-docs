@@ -1,36 +1,10 @@
 ---
 title: 'Tools'
-description: 'Leverage AI in your daily business operations with quick, non-conversational task execution'
+description: 'Learn how to use tools to automate your business tasks'
 ---
 
 Tools are purpose-built No-Code AI interfaces that help you accomplish specific tasks efficiently. Instead of having open-ended conversations, tools provide structured input forms that:
-- Take in specific user inputs
-- Process them using Generative AI
-- Deliver consistent, reliable outputs
 
-## How Tools Work
-
-Tools follow a structured approach to automate your business tasks:
-
-<CardGroup cols={2}>
-  <Card title="Easy Configuration" icon="sliders">
-    Design your tool through a simple interface with custom form fields, dynamic variables, and AI model settings. Configure temperature, tokens, and other parameters to fine-tune outputs exactly how you need them.
-  </Card>
-
-  <Card title="Context-Aware Results" icon="database">
-    Ground outputs in your documents and sources. Just attach your business context to tools and get accurate results.
-  </Card>
-
-  <Card title="Team Collaboration" icon="users">
-    Share tools across your workspace or organization and let your team leverage the same standardized workflows.
-  </Card>
-
-  <Card title="Standardized Process" icon="arrows-spin">
-    Ensure every team member follows the same process with consistent models and data usage, eliminating output randomization.
-  </Card>
-</CardGroup>
-
-## Feature demos
 
 ## Working with Tools
 
@@ -38,11 +12,16 @@ Getting started with tools is simple and easy
 
 <Steps>
   <Step title="AI-Enable Your Use Case">
-    Understand the use cases where you can leverage Generative AI. Explore over 500 pre-built AI tools for ideas, or start experimenting with your own.
+    Understand the use cases where you can leverage Generative AI. Explore over 500+ pre-built AI tools for ideas, or start experimenting with your own.
   </Step>
 
   <Step title="Design Your AI Tool">
-    Create your AI tool from scratch or import one from the library and customize. Define variable inputs, customize form fields, and connect to a large language model of your choice.
+  Design your tool in the AI Studio
+  - Create your AI tool from scratch or import one from the library and customize.
+  - Define variable inputs, customize form fields, and connect to a large language model of your choice.
+  - Fine tune the tool parameters.
+  - Publish the tool to a Teamspace for collaboration.
+
     <Card
       title="Detailed Guide: Create Your First Tool"
       icon="wand-magic-sparkles"
@@ -53,15 +32,36 @@ Getting started with tools is simple and easy
   </Step>
 
   <Step title="Customize With Your Data">
-    Set context from documents, web links and more — and make your tool act the way you want it to. Set access permissions and share it to a Teamspace to collaborate.
+    Configure context using documents, web links, and text content. Set access permissions and share the tool within a Teamspace for collaboration.
 
   </Step>
 
   <Step title="Improve Over Time">
-    Monitor tool usage, performance, and outputs. Refine and improve based on real data and feedback from team members, leaders and domain experts.
+    Monitor tool usage, performance, and outputs. Access feedback logs and metrics to evaluate all runs and make necessary improvements.
   </Step>
 </Steps>
 
+
+## How Tools Work
+Understand how tools work in Hyperleap under the hood
+
+<CardGroup cols={2}>
+  <Card title="Form Processing" icon="inbox-in">
+    The tool interface collects structured inputs through custom form fields, validating and preparing data for AI processing.
+  </Card>
+
+  <Card title="Dynamic Replacement" icon="arrows-rotate">
+    User-provided values are dynamically inserted into predefined variables in the tool's template, creating a complete instruction set.
+  </Card>
+
+  <Card title="Context Enrichment" icon="database">
+    The system incorporates relevant information from attached knowledge sources, enhancing the tool's understanding with business context.
+  </Card>
+
+  <Card title="AI Generation" icon="microchip">
+    The enriched instruction set is processed by our AI engine in Studio, producing standardized outputs based on configured parameters.
+  </Card>
+</CardGroup>
 
 ## Common Use Cases
 
@@ -87,7 +87,7 @@ Getting started with tools is simple and easy
 Common issues you might encounter while working with tools and how to resolve them:
 
 <AccordionGroup>
-  <Accordion title="Tool Configuration Issues" icon="sliders">
+  <Accordion title="Tool Configuration Issues">
     **Issue**: Tool not producing expected outputs or behaving inconsistently.
     
     **Solutions**:
@@ -97,7 +97,7 @@ Common issues you might encounter while working with tools and how to resolve th
     - Test the tool in Studio's preview mode before sharing
   </Accordion>
 
-  <Accordion title="Context Management" icon="database">
+  <Accordion title="Context Management">
     **Issue**: Tool outputs not reflecting your business context or knowledge base.
     
     **Solutions**:
@@ -106,7 +106,7 @@ Common issues you might encounter while working with tools and how to resolve th
     - Use Studio's context preview to verify what information is available to the tool
   </Accordion>
 
-  <Accordion title="Team Access and Sharing" icon="users">
+  <Accordion title="Team Access and Sharing">
     **Issue**: Team members unable to access or use shared tools.
     
     **Solutions**:
@@ -120,12 +120,12 @@ Common issues you might encounter while working with tools and how to resolve th
 ## FAQs
 
 <AccordionGroup>
-  <Accordion title="How quickly can I create and deploy a new tool?" icon="clock">
+  <Accordion title="How quickly can I create and deploy a new tool?">
 
 With our no-code builder and templates, you can create and deploy a custom tool in minutes. Start with a template or build from scratch.
   </Accordion>
 
-  <Accordion title="Can I customize tools for different departments or use cases?" icon="database">
+  <Accordion title="Can I customize tools for different departments or use cases?">
 Yes, tools are fully customizable for any workflow. Create specific tools for marketing, HR, sales, or any other team needs.
   </Accordion>
 </AccordionGroup>
@@ -145,7 +145,7 @@ Yes, tools are fully customizable for any workflow. Create specific tools for ma
     icon="browser"
     href="https://studio.hyperleapai.com"
   >
-    Create and manage your tools through our intuitive web interface
+    Easily create and manage your tools using our user-friendly web interface, AI Studio.
   </Card>
 </CardGroup>
 

@@ -1,0 +1,106 @@
+---
+title: 'Integrate Prompts'
+description: 'Learn how to integrate your prompts into applications using our API'
+---
+
+Before integrating a prompt, ensure you have:
+- A prompt published to a teamspace
+- Teamspace Owner or Admin permissions
+- API access enabled for the prompt
+- Your API key
+
+## Getting the API Integration Details
+
+There are two ways to access your prompt's API integration details:
+
+<Steps>
+  <Step title="Navigate to API Console">
+    Navigate to Teamspaces page in API Console and select your teamspace
+    
+    <Frame className="w-full" style={{ maxWidth: "max((min(min(100vw - 30px, 1200px) - 120px, 1200px) - 40px) / 2, 1px)" }}>
+      <img 
+        src="/images/prompts/integration/select-teamspace.png" 
+        alt="Select Teamspace"
+        className="w-full h-auto object-contain"
+      />
+    </Frame>
+  </Step>
+
+  <Step title="Access Integration Details">
+    <Tabs>
+      <Tab title="Via Teamspaces page">
+        Click "cURL Request" in the actions menu beside your prompt
+        
+        <Frame className="w-full" style={{ maxWidth: "max((min(min(100vw - 30px, 1200px) - 120px, 1200px) - 40px) / 2, 1px)" }}>
+          <img 
+            src="/images/prompts/integration/prompt-curl.png" 
+            alt="cURL Request Option"
+            className="w-full h-auto object-contain"
+          />
+        </Frame>
+        <Frame className="w-full" style={{ maxWidth: "max((min(min(100vw - 30px, 1200px) - 120px, 1200px) - 40px) / 2, 1px)" }}>
+          <img 
+            src="/images/prompts/integration/prompt-integration.png" 
+            alt="API Integration Dialog"
+            className="w-full h-auto object-contain"
+          />
+        </Frame>
+      </Tab>
+      
+      <Tab title="Via Prompt Editor">
+        Update the prompt and easily integrate the latest version
+        - Select a prompt
+        
+        <Frame className="w-full" style={{ maxWidth: "max((min(min(100vw - 30px, 1200px) - 120px, 1200px) - 40px) / 2, 1px)" }}>
+          <img 
+            src="/images/prompts/integration/select-prompt.png" 
+            alt="Select Prompt"
+            className="w-full h-auto object-contain"
+          />
+        </Frame>
+        - Click "API Integration" option and integration dialog will be displayed
+
+        <Frame className="w-full" style={{ maxWidth: "max((min(min(100vw - 30px, 1200px) - 120px, 1200px) - 40px) / 2, 1px)" }}>
+          <img 
+            src="/images/prompts/integration/prompt-api.png" 
+            alt="API Integration"
+            className="w-full h-auto object-contain"
+          />
+        </Frame>
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Integration Options
+
+<CardGroup cols={2}>
+  <Card title="REST API" icon="code">
+    Integrate using our REST API with your preferred programming language
+  </Card>
+  
+  <Card title="SDK Support" icon="box">
+    Use our official SDKs for seamless integration (Coming Soon)
+  </Card>
+</CardGroup>
+
+For detailed API documentation and examples, visit our [API Reference](/api-ref/prompts/overview).
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="API Reference"
+    icon="code"
+    href="/api-ref/prompts/overview"
+  >
+    View complete API documentation for prompts
+  </Card>
+  <Card
+    title="Create Prompt"
+    icon="wand-magic-sparkles"
+    href="/guides/prompts/create-prompt"
+  >
+    Learn how to create and configure prompts
+  </Card>
+</CardGroup>

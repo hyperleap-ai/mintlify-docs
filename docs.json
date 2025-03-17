@@ -27,7 +27,7 @@
       {
         "tab": "Welcome",
         "icon": "house",
-        "pages": ["temp"]
+        "pages": ["welcome"]
       },
       {
         "tab": "Documentation",
@@ -53,7 +53,8 @@
                 "icon": "wand-magic-sparkles",
                 "pages": [
                   "guides/prompts/prompts",
-                  "guides/prompts/create-prompt"
+                  "guides/prompts/create-prompt",
+                  "guides/prompts/integrate-prompt"
                 ]
               },
               {
@@ -61,7 +62,8 @@
                 "icon": "users",
                 "pages": [
                   "guides/personas/personas",
-                  "guides/personas/create-persona"
+                  "guides/personas/create-persona",
+                  "guides/personas/integrate-persona"
                 ]
               },
               {

@@ -1,0 +1,106 @@
+---
+title: 'Integrate Personas'
+description: 'Learn how to integrate your personas into applications using our API'
+---
+
+## Prerequisites
+
+Before integrating a persona, ensure you have:
+- A persona published to a teamspace
+- Teamspace Owner or Admin permissions
+- API access enabled for the persona
+- Your API key
+
+## Getting the API Integration Details
+
+<Steps>
+  <Step title="Navigate to API Console">
+    Navigate to Teamspaces page in API Console and select your teamspace
+    
+    <Frame className="w-full" style={{ maxWidth: "max((min(min(100vw - 30px, 1200px) - 120px, 1200px) - 40px) / 2, 1px)" }}>
+      <img 
+        src="/images/prompts/integration/select-teamspace.png" 
+        alt="Select Teamspace"
+        className="w-full h-auto object-contain"
+      />
+    </Frame>
+  </Step>
+
+  <Step title="Access Integration Details">
+    <Tabs>
+      <Tab title="Via Teamspaces page">
+        Click "cURL Request" in the actions menu beside your persona
+        
+        <Frame className="w-full" style={{ maxWidth: "max((min(min(100vw - 30px, 1200px) - 120px, 1200px) - 40px) / 2, 1px)" }}>
+          <img 
+            src="/images/personas/integration/persona-curl.png" 
+            alt="cURL Request Option"
+            className="w-full h-auto object-contain"
+          />
+        </Frame>
+        <Frame className="w-full" style={{ maxWidth: "max((min(min(100vw - 30px, 1200px) - 120px, 1200px) - 40px) / 2, 1px)" }}>
+          <img 
+            src="/images/personas/integration/persona-integration.png" 
+            alt="API Integration Dialog"
+            className="w-full h-auto object-contain"
+          />
+        </Frame>
+      </Tab>
+      
+      <Tab title="Via Persona Editor">
+        Update the persona and easily integrate the latest version
+        - Select a persona
+        
+        <Frame className="w-full" style={{ maxWidth: "max((min(min(100vw - 30px, 1200px) - 120px, 1200px) - 40px) / 2, 1px)" }}>
+          <img 
+            src="/images/personas/integration/select-persona.png" 
+            alt="Select Persona"
+            className="w-full h-auto object-contain"
+          />
+        </Frame>
+        - Click "API Integration" option and integration dialog will be displayed
+
+        <Frame className="w-full" style={{ maxWidth: "max((min(min(100vw - 30px, 1200px) - 120px, 1200px) - 40px) / 2, 1px)" }}>
+          <img 
+            src="/images/personas/integration/persona-api.png" 
+            alt="API Integration"
+            className="w-full h-auto object-contain"
+          />
+        </Frame>
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Integration Options
+
+<CardGroup cols={2}>
+  <Card title="REST API" icon="code">
+    Integrate using our REST API with your preferred programming language
+  </Card>
+  
+  <Card title="SDK Support" icon="box">
+    Use our official SDKs for seamless integration (Coming Soon)
+  </Card>
+</CardGroup>
+
+For detailed API documentation and examples, visit our [API Reference](/api-ref/conversations/overview).
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="API Reference"
+    icon="code"
+    href="/api-ref/conversations/overview"
+  >
+    View complete API documentation for personas
+  </Card>
+  <Card
+    title="Create Persona"
+    icon="users"
+    href="/guides/personas/create-persona"
+  >
+    Learn how to create and configure personas
+  </Card>
+</CardGroup>

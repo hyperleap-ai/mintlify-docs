@@ -2,12 +2,10 @@
 title: ' '
 mode: 'custom'
 ---
-
 <div style={{
-  backgroundColor: '#f0fdf4',
   width: 'screen',
   '@media (prefers-color-scheme: dark)': {
-    backgroundColor: '#0c1e1e'
+    backgroundColor: 'red'
   }
 }}>
   <div style={{
@@ -16,30 +14,17 @@ mode: 'custom'
     padding: '5rem 1rem',
     textAlign: 'center'
   }}>
-    <h1 style={{
+    <h1 className="text-black dark:text-white" style={{
       fontSize: '2.5rem',
       lineHeight: '1.15',
       letterSpacing: '-0.02em',
       fontWeight: 600,
       marginBottom: '1rem',
-      color: 'var(--tw-prose-headings, #1f2937)',
-      '@media (prefers-color-scheme: dark)': {
-        color: '#ffffff'
-      }
     }}>
       Welcome to Hyperleap
     </h1>
     
-    <p style={{
-      fontSize: '1.125rem',
-      color: 'var(--tw-prose-lead, #4b5563)',
-      '@media (prefers-color-scheme: dark)': {
-        color: '#e5e7eb'
-      },
-      maxWidth: '42rem',
-      margin: '0 auto 2rem',
-      lineHeight: '1.5'
-    }}>
+    <p className="text-[#4b5563] dark:text-[#e5e7eb] text-lg max-w-2xl mx-auto mb-8">
       Power your applications with unparalleled AI conversation, prompt engineering, and feedback capabilities.
     </p>
     
@@ -78,7 +63,7 @@ mode: 'custom'
   <h2 style={{
     textAlign: 'center',
     fontSize: '1.875rem',
-    fontWeight: 700,
+    fontWeight: 500,
     marginBottom: '3rem',
     color: 'var(--tw-prose-headings)',
     '@media (prefers-color-scheme: dark)': {
@@ -89,12 +74,12 @@ mode: 'custom'
   </h2>
   <CardGroup cols={3}>
     <Card
-      title="Quickstart"
-      icon="play"
+      title="Introduction"
+      icon="house"
       href="/introduction"
       iconType="duotone"
     >
-      Start using the Hyperleap API in minutes
+      Start using Hyperleap in minutes
     </Card>
     <Card
       title="API Reference"
@@ -102,12 +87,12 @@ mode: 'custom'
       href="/api-ref/introduction"
       iconType="duotone"
     >
-      Integrate the API into your workflows
+      Integrate the Hyperleap API into your workflows
     </Card>
     <Card
       title="Guides"
       icon="book"
-      href="/guides/faq"
+      href="/guides/"
       iconType="duotone"
     >
       Learn how to use Hyperleap effectively

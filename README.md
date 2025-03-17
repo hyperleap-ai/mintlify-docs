@@ -31,4 +31,3 @@ Authorization: Bearer YOUR_API_KEY
 - Visit our [website](https://hyperleapai.com) for more information about Hyperleap
 
 For support, please contact us at [gopi@hyperleap.ai](mailto:gopi@hyperleap.ai).
-
