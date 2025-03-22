@@ -1,27 +1,26 @@
 ---
-title: 'Create Your First Chatbot'
-description: 'A Comprehensive Guide to Creating and Configuring AI Chatbots'
+title: "Create Your First Chatbot"
+description: "A Comprehensive Guide to Creating and Configuring AI Chatbots"
 ---
-
-Learn how to create and configure AI chatbots for your website
 
 ## Prerequisites
 
 Before creating chatbots, ensure you have:
+
 - Access to [Studio](https://studio.hyperleapai.com)
 - An active Chatbot subscription
 - Website access for deployment
 
 <Note>
-    You have to [whitelist](https://studio.hyperleapai.com/manage-organization) the domain of your website in the organization settings to use the chatbot.
+  You have to [whitelist](https://studio.hyperleapai.com/manage-organization)
+  the domain of your website in the organization settings to use the chatbot.
 </Note>
 
 Follow these steps to create and configure a chatbot:
 
-
 <Steps>
   <Step title="Get Started">
-    Navigate to the website-chatbots page in Studio and click "Create New Chatbot". You can:
+    Navigate to the website-chatbots page in Studio and click "Create New Chatbot". 
     
     <Frame>
       <img 
@@ -41,7 +40,8 @@ Follow these steps to create and configure a chatbot:
 
   <Step title="Configure Content">
     Configure your chatbot's content across different screens:
-    - Select a Screen and configure its content
+    
+    Select a Screen and configure its content
         <Frame>
           <img 
             src="/images/chatbots/create/configure-content.png" 
@@ -54,120 +54,196 @@ Follow these steps to create and configure a chatbot:
 
   <Step title="Configure Behavior">
     Set up your chatbot's AI behavior and responses:
-    
-    <AccordionGroup>
-    <Accordion title="Define Behavior" icon="microchip">
-        Define the behavior of the chatbot:
-        - Set how the chatbot should behave
+
+    <Tabs>
+      <Tab title="Import Pre-built Behavior">
+        Quick-start with tested behavior templates that you can customize:
+        <AccordionGroup>
+        <Accordion title="Import Behavior Templates">
         <Frame>
-          <img 
-            src="/images/chatbots/create/configure-behaviour.png" 
-            alt="Setting AI model" 
+          <img
+            src="/images/chatbots/create/import-behavior.png"
+            alt="Import behavior"
             width="800"
           />
         </Frame>
+        <Frame>
+          <img
+            src="/images/chatbots/create/select-behavior.png"
+            alt="Select behavior"
+            width="800"
+          />
+        </Frame>
+
+        After importing, you can customize all configuration options below:
         </Accordion>
+          <Accordion title="Set AI Model">
+            Choose the AI model that best fits your use case:
+            <Frame>
+              <img
+                src="/images/chatbots/create/set-ai-model.png"
+                alt="Setting AI model"
+                width="800"
+              />
+            </Frame>
+          </Accordion>
 
-      <Accordion title="Set AI Model" icon="microchip">
-        Choose the AI model that best fits your use case:
-        <Frame>
-          <img 
-            src="/images/chatbots/create/set-ai-model.png" 
-            alt="Setting AI model" 
-            width="800"
-          />
-        </Frame>
-      </Accordion>
+          <Accordion title="Attach Sources">
+            Connect your knowledge sources:
+            - Upload documents, website URLs, or text content
+            <Frame>
+              <img
+                src="/images/chatbots/create/attach-sources.png"
+                alt="Setting AI model"
+                width="800"
+              />
+            </Frame>
 
-      <Accordion title="Attach Sources" icon="database">
-        Connect your knowledge sources:
-        - Upload documents, website URLs, or text content
-        <Frame>
-          <img 
-            src="/images/chatbots/create/attach-sources.png" 
-            alt="Setting AI model" 
-            width="800"
-          />
-        </Frame>
-        
-        <Note>
-        To learn more about sources, check out the [Sources](/guides/sources) guide.
-        </Note>
-      </Accordion>
+            <Note>
+            To learn more about sources, check out the [Sources](/guides/sources) guide.
+            </Note>
+          </Accordion>
 
-      <Accordion title="Import Behavior" icon="file-import">
-        Import pre-configured behaviors:
-        <Frame>
-          <img 
-            src="/images/chatbots/create/import-behavior.png" 
-            alt="Import behavior" 
-            width="800"
-          />
-        </Frame>
-        <Frame>
-          <img 
-            src="/images/chatbots/create/select-behavior.png" 
-            alt="Select behavior" 
-            width="800"
-          />
-        </Frame>
-      </Accordion>
+          <Accordion title="Adjust Configurations">
+            Fine-tune your chatbot settings:
+            - Temperature, Max tokens, Response length, Memory handling, Context window
+            <Frame>
+              <img
+                src="/images/chatbots/create/adjust-configuration.png"
+                alt="Adjust configuration"
+                width="800"
+              />
+            </Frame>
+          </Accordion>
+        </AccordionGroup>
+      </Tab>
 
-      <Accordion title="Adjust Configurations" icon="sliders">
-        Fine-tune your chatbot settings:
-        - Temperature, Max tokens, Response length, Memory handling, Context window
-        <Frame>
-          <img 
-            src="/images/chatbots/create/adjust-configuration.png" 
-            alt="Adjust configuration" 
-            width="800"
-          />
-        </Frame>
-      </Accordion>
+      <Tab title="Create Custom Behavior">
+        Build your behavior from scratch with complete control:
+        <AccordionGroup>
+          <Accordion title="Define Custom Behavior">
+            Configure your own custom behavior:
+            <Frame>
+              <img
+                src="/images/chatbots/create/configure-behaviour.png"
+                alt="Setting AI model"
+                width="800"
+              />
+            </Frame>
+          </Accordion>
 
-    </AccordionGroup>
+          <Accordion title="Set AI Model">
+            Choose the AI model that best fits your use case:
+            <Frame>
+              <img
+                src="/images/chatbots/create/set-ai-model.png"
+                alt="Setting AI model"
+                width="800"
+              />
+            </Frame>
+          </Accordion>
+
+          <Accordion title="Attach Sources">
+            Connect your knowledge sources:
+            - Upload documents, website URLs, or text content
+            <Frame>
+              <img
+                src="/images/chatbots/create/attach-sources.png"
+                alt="Setting AI model"
+                width="800"
+              />
+            </Frame>
+
+            <Note>
+            To learn more about sources, check out the [Sources](/guides/sources) guide.
+            </Note>
+          </Accordion>
+
+          <Accordion title="Adjust Configurations">
+            Fine-tune your chatbot settings:
+            - Temperature, Max tokens, Response length, Memory handling, Context window
+            <Frame>
+              <img
+                src="/images/chatbots/create/adjust-configuration.png"
+                alt="Adjust configuration"
+                width="800"
+              />
+            </Frame>
+          </Accordion>
+        </AccordionGroup>
+      </Tab>
+    </Tabs>
+
   </Step>
 
   <Step title="Configure Style">
     Customize your chatbot's appearance:
 
-    - Enable or disable Branding
-    <AccordionGroup>
+    <Tabs>
+      <Tab title="Import Style Template">
+        Quick-start with pre-built style templates:
+        <AccordionGroup>
+          <Accordion title="Import Template">
+            Start with our professionally designed templates:
+            <Frame>
+              <img
+                src="/images/chatbots/create/import-style-template.png"
+                alt="Import style template"
+                width="800"
+              />
+            </Frame>
+            <Frame>
+              <img
+                src="/images/chatbots/create/select-style-template.png"
+                alt="Select style template"
+                width="800"
+              />
+            </Frame>
+            After importing, you can customize all styling options below:
+          </Accordion>
 
-      <Accordion title="Select a screen and adjust its styling" icon="palette">
-       Adjust the global styling, lead form styling, conversation styling, chatbot button styling
-       - You can control how every pixel of the chatbot looks
+          <Accordion title="Customize Styling" icon="palette">
+            Fine-tune the imported template:
+            - Global styling
+            - Lead form styling
+            - Conversation styling
+            - Chatbot button styling
+            <Frame>
+              <img
+                src="/images/chatbots/create/adjust-styling.png"
+                alt="Adjust styling"
+                width="800"
+              />
+            </Frame>
+          </Accordion>
+        </AccordionGroup>
+      </Tab>
 
-        <Frame>
-          <img 
-            src="/images/chatbots/create/adjust-styling.png" 
-            alt="Adjust styling " 
-            width="800"
-          />
-        </Frame>
-      </Accordion>
+      <Tab title="Create Custom Style">
+        Build your style from scratch with complete control:
+        <AccordionGroup>
+          <Accordion title="Configure Custom Style" icon="palette">
+            Design every aspect of your chatbot:
+            - Global styling
+            - Lead form styling
+            - Conversation styling
+            - Chatbot button styling
+            <Frame>
+              <img
+                src="/images/chatbots/create/adjust-styling.png"
+                alt="Adjust styling"
+                width="800"
+              />
+            </Frame>
+          </Accordion>
+        </AccordionGroup>
+      </Tab>
+    </Tabs>
 
-      <Accordion title="Import Style Template" icon="circle">
-        Import a pre-build style template for your chatbot
-        - This will save you a lot of time from scratch
-        - You can also edit the imported style template to make it unique
-        <Frame>
-          <img 
-            src="/images/chatbots/create/import-style-template.png" 
-            alt="Import style template" 
-            width="800"
-          />
-        </Frame>
-        <Frame>
-          <img 
-            src="/images/chatbots/create/select-style-template.png" 
-            alt="Select style template" 
-            width="800"
-          />
-        </Frame>
-      </Accordion>
+    <Info>
+       You have the option to enable or disable branding for your chatbot.
+     </Info>
 
-    </AccordionGroup>
   </Step>
   <Step title="Edit Chabot Settings">
     Edit the chatbot settings:
@@ -192,27 +268,27 @@ Follow these steps to create and configure a chatbot:
   </Step>
   <Step title="Integration">
     Add your chatbot to your website:
-    - Ensure the chatbot is published
+    - Publish your chatbot to enable integration.
 
     <Note>
-      Users on the Free plan cannot integrate the chatbot or access the integration script. Please upgrade your plan to enable these features.
+      Users on the Free plan cannot integrate the chatbot. Please upgrade your plan to enable these features.
     </Note>
-    
+
     <Frame>
-      <img 
-        src="/images/chatbots/create/integration.png" 
-        alt="Integration" 
+      <img
+        src="/images/chatbots/create/integration.png"
+        alt="Integration"
         width="800"
       />
     </Frame>
     <Frame>
-      <img 
-        src="/images/chatbots/create/integration-dialog.png" 
-        alt="Integration dialog" 
+      <img
+        src="/images/chatbots/create/integration-dialog.png"
+        alt="Integration dialog"
         width="800"
       />
     </Frame>
-    
+
     Place this code in the `<head>` tag of your website.
 
   </Step>
@@ -239,21 +315,14 @@ Follow these steps to create and configure a chatbot:
 
 </Steps>
 
-
 <Note>
-  Users on the Free plan can create up to 1 chatbot. Upgrade your plan to create more chatbots and access additional features.
+  Users on the Free plan can create up to 1 chatbot. Upgrade your plan to create
+  more chatbots and access additional features.
 </Note>
 
 ## Next Steps
 
 <CardGroup cols={2}>
-  <Card
-    title="Monitor Performance"
-    icon="chart-line"
-    href="/guides/chatbots/analytics"
-  >
-    Track your chatbot's performance and lead generation
-  </Card>
   <Card
     title="Return to Overview"
     icon="arrow-left"

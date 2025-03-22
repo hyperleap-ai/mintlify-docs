@@ -35,7 +35,7 @@ Simple 4 step process to start using personas:
     Integrate conversations into your application using straightforward REST API calls. Send user messages and context as JSON payloads, allowing our infrastructure to manage the complexities. This approach is compatible with any programming language or framework.
 
     ```javascript
-    // Example API integration
+    // Example API integration using Javascript
     const response = await fetch('https://api.hyperleapai.com/conversations/persona', {
       method: 'POST',
       headers: {
@@ -70,7 +70,7 @@ Simple 4 step process to start using personas:
 Understand how personas work in Hyperleap under the hood
 
 <CardGroup cols={2}>
-  <Card title="System Initialization" icon="power">
+  <Card title="System Initialization" icon="gear">
     The persona's core characteristics and behavioral parameters are loaded into the AI system, establishing its base personality.
   </Card>
 
@@ -78,7 +78,7 @@ Understand how personas work in Hyperleap under the hood
     When interacting, the persona processes inputs through its knowledge base and configured sources, maintaining context awareness.
   </Card>
 
-  <Card title="Response Generation" icon="message-square">
+  <Card title="Response Generation" icon="reply">
     The AI generates responses by combining personality traits, contextual understanding, and configured behavioral rules.
   </Card>
 

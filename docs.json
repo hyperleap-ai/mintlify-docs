@@ -3,6 +3,10 @@
   "theme": "mint",
   "name": "Hyperleap",
   "favicon": "/favicon.ico",
+  "logo": {
+    "dark": "/logo/hyperleap-logo-dark.png",
+    "light": "/logo/hyperleap-logo.png"
+  },
   "colors": {
     "primary": "#0D9373",
     "light": "#07C983",
@@ -192,4 +196,3 @@
     }
   }
 }
-

@@ -34,7 +34,7 @@ Simple 4 step process to start using prompts
     To integrate with the API, perform a REST API call from your application. Send your variables in a JSON format, and the system will handle the AI context and state management. This is compatible with any programming language or framework.
 
     ```javascript
-    // Example API integration
+    // Example API integration using JavaScript
     const response = await fetch('https://api.hyperleapai.com/prompt-runs/execute', {
       method: 'POST',
       headers: {
@@ -111,7 +111,7 @@ Common issues you might encounter and how to resolve them:
     
     **Solutions**:
     - Verify variable names match exactly in both prompt template and input
-    - Check for proper syntax: `{variableName}`
+    - Check for proper syntax: `{{variableName}}`
     - Ensure all required variables are provided in the request
     - Use the Studio interface to validate variable substitution
   </Accordion>
