@@ -164,6 +164,10 @@ Example: including prompts overview page in prompts group in docs.json
 1. Remove the page reference from `docs.json`
 2. Optionally delete the `.mdx` file (or keep for future use)
 
+# Troubleshooting
+
+Sometimes AI Code Gens seriously hallucinate and add unneccessary code like `{" "}` when formatting, remove these
+
 ## Useful Resources
 
 - [Mintlify Components](https://mintlify.com/docs/components/overview)
