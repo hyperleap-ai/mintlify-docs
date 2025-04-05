@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Hyperleap",
+  "name": "Hyperleap AI",
   "favicon": "/favicon.ico",
   "logo": {
     "dark": "/logo/hyperleap-logo-dark.png",
@@ -17,12 +17,12 @@
       "anchors": [
         {
           "anchor": "Pricing",
-          "href": "https://hyperleapai.com/pricing",
+          "href": "https://hyperleap.ai/pricing",
           "icon": "dollar-sign"
         },
         {
-          "anchor": "About Hyperleap",
-          "href": "https://hyperleapai.com",
+          "anchor": "About Hyperleap AI",
+          "href": "https://hyperleap.ai",
           "icon": "address-card"
         }
       ]
