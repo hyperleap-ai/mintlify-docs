@@ -1,13 +1,13 @@
 ---
-title: 'Capture Feedback Overview'
-description: 'Overview of the Capture Feedback API endpoints'
+title: "Capture Feedback Overview"
+description: "Overview of the Capture Feedback API endpoints"
 ---
 
 The Capture Feedback API allows you to collect and store user feedback on AI interactions. This feedback can be used to improve the quality of AI responses and track user satisfaction.
 
 ## Available Endpoints
 
-### [Set Conversation Score](/api-ref/capture-feedback/set-conversation-score)
+### [Set Conversation Score](/api-reference/capture-feedback/set-conversation-score)
 
 Set a score for an entire conversation based on the conversation id, providing feedback on the overall quality of the interaction.
 
@@ -15,7 +15,7 @@ Set a score for an entire conversation based on the conversation id, providing f
 PATCH /conversations/{conversationId}/score
 ```
 
-### [Set Messages Score](/api-ref/capture-feedback/set-messages-score)
+### [Set Messages Score](/api-reference/capture-feedback/set-messages-score)
 
 Set a score for specific messages within a conversation based on the conversation id and message id.
 
@@ -23,7 +23,7 @@ Set a score for specific messages within a conversation based on the conversatio
 PATCH /conversations/{conversationId}/messages/{messageId}/score
 ```
 
-### [Set Prompt Run Score](/api-ref/capture-feedback/set-prompt-run-score)
+### [Set Prompt Run Score](/api-reference/capture-feedback/set-prompt-run-score)
 
 Set a score for a specific prompt run based on the prompt run id.
 
@@ -48,14 +48,14 @@ The response confirms that the feedback has been recorded successfully.
 - Collecting user satisfaction metrics
 - Identifying problematic AI responses
 - Training and fine-tuning AI models based on user feedback
-- Creating reports on AI performance 
-
+- Creating reports on AI performance
 
 <RequestExample>
 
 ```js ENDPOINTS
-PATCH /conversations/{conversationId}/score
-PATCH /conversations/{conversationId}/messages/{messageId}/score
-PATCH /prompt-runs/{promptRunId}/score
+PATCH / conversations / { conversationId } / score;
+PATCH / conversations / { conversationId } / messages / { messageId } / score;
+PATCH / prompt - runs / { promptRunId } / score;
 ```
+
 </RequestExample>

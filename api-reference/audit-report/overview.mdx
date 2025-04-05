@@ -1,9 +1,10 @@
 ---
-title: 'Audit Report Overview'
-description: 'Overview of the Audit Report API endpoints'
+title: "Audit Report Overview"
+description: "Overview of the Audit Report API endpoints"
 ---
 
 ## Introduction
+
 The Audit Report API allows you to retrieve detailed information about AI interactions with conversations and prompt runs for auditing and compliance purposes.
 
 - Conversations
@@ -13,7 +14,7 @@ The Audit Report API allows you to retrieve detailed information about AI intera
 
 ## Available Endpoints
 
-### [Conversations](/api-ref/audit-report/conversations)
+### [Conversations](/api-reference/audit-report/conversations)
 
 Retrieve audit information about conversations based on filter conditions passed.
 
@@ -22,6 +23,7 @@ POST /audit/conversations
 ```
 
 **Basic Response Format:**
+
 ```json
 {
   "conversations": [
@@ -37,14 +39,16 @@ POST /audit/conversations
 }
 ```
 
-### [Conversation Run Details](/api-ref/audit-report/conversation-run-details)
+### [Conversation Run Details](/api-reference/audit-report/conversation-run-details)
 
 Retrieve detailed audit information about a specific conversation run based on the conversation id.
 
 ```
 GET /audit/conversations/{conversationId}
 ```
+
 **Basic Response Format:**
+
 ```json
 {
   "id": "string",
@@ -62,7 +66,7 @@ GET /audit/conversations/{conversationId}
 }
 ```
 
-### [Prompt Runs](/api-ref/audit-report/prompt-runs)
+### [Prompt Runs](/api-reference/audit-report/prompt-runs)
 
 Retrieve audit information about prompt runs based on filter conditions passed.
 
@@ -71,6 +75,7 @@ POST /audit/prompt-runs
 ```
 
 **Basic Response Format:**
+
 ```json
 {
   "promptRuns": [
@@ -86,7 +91,7 @@ POST /audit/prompt-runs
 }
 ```
 
-### [Prompt Run Details](/api-ref/audit-report/prompt-run-details)
+### [Prompt Run Details](/api-reference/audit-report/prompt-run-details)
 
 Retrieve detailed audit information about a specific prompt run based on the prompt run id.
 
@@ -95,6 +100,7 @@ GET /audit/prompt-runs/{promptRunId}
 ```
 
 **Basic Response Format:**
+
 ```json
 {
   "id": "string",
@@ -118,15 +124,15 @@ GET /audit/prompt-runs/{promptRunId}
 - Quality assurance
 - Performance analysis
 - Security auditing
-- Debugging and troubleshooting 
-
+- Debugging and troubleshooting
 
 <RequestExample>
 
 ```js ENDPOINTS
-POST /audit/conversations
-GET /audit/conversations/{conversationId}
-POST /audit/prompt-runs
-GET /audit/prompt-runs/{promptRunId}
+POST / audit / conversations;
+GET / audit / conversations / { conversationId };
+POST / audit / prompt - runs;
+GET / audit / prompt - runs / { promptRunId };
 ```
+
 </RequestExample>

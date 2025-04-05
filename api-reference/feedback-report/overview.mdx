@@ -1,13 +1,13 @@
 ---
-title: 'Feedback Report Overview'
-description: 'Overview of the Feedback Report API endpoints'
+title: "Feedback Report Overview"
+description: "Overview of the Feedback Report API endpoints"
 ---
 
 The Feedback Report API allows you to retrieve aggregated feedback data collected from users about AI interactions with conversations and prompt runs.
 
 ## Available Endpoints
 
-### [Conversations](/api-ref/feedback-report/conversations)
+### [Conversations](/api-reference/feedback-report/conversations)
 
 Retrieve feedback reports for conversations based on filter conditions like conversation id, caller id, etc.
 
@@ -15,7 +15,7 @@ Retrieve feedback reports for conversations based on filter conditions like conv
 POST /feedback/conversations
 ```
 
-### [Prompt Runs](/api-ref/feedback-report/prompt-runs)
+### [Prompt Runs](/api-reference/feedback-report/prompt-runs)
 
 Retrieve feedback reports for prompt runs based on filter conditions like prompt id, prompt version id, caller id, etc.
 
@@ -29,13 +29,13 @@ POST /feedback/prompt-runs
 - Identifying areas for improvement
 - Tracking performance over time
 - Prioritizing development efforts
-- Reporting on AI quality metrics 
-
+- Reporting on AI quality metrics
 
 <RequestExample>
 
 ```js ENDPOINTS
-POST /feedback/conversations
-POST /feedback/prompt-runs
+POST / feedback / conversations;
+POST / feedback / prompt - runs;
 ```
+
 </RequestExample>

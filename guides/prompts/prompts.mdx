@@ -1,12 +1,12 @@
 ---
-title: 'Working with Prompts'
-description: 'Learn how to create, manage, and optimize AI prompts in Hyperleap AI'
+title: "Working with Prompts"
+description: "Learn how to create, manage, and optimize AI prompts in Hyperleap AI"
 ---
 
 Prompts in Hyperleap AI are pre-configured instructions that guide AI responses for your specific use cases. They act as templates that can be reused across your organization, ensuring consistent and accurate AI interactions while reducing prompt engineering effort.
 
-
 Simple 4 step process to start using prompts
+
 <Steps>
   <Step title="Create and Configure">
     Design your AI feature in our API Console.
@@ -22,6 +22,7 @@ Simple 4 step process to start using prompts
     >
       Learn the step-by-step process of creating and configuring your first prompt
     </Card>
+
   </Step>
 
   <Step title="Save and Test">
@@ -55,8 +56,9 @@ Simple 4 step process to start using prompts
     ```
 
     <Note>
-      For detailed API specifications and more examples, check out our [Prompts API Reference](/api-ref/prompts/overview). You'll find complete documentation of all available endpoints, parameters, and response formats.
+      For detailed API specifications and more examples, check out our [Prompts API Reference](/api-reference/prompts/overview). You'll find complete documentation of all available endpoints, parameters, and response formats.
     </Note>
+
   </Step>
 
   <Step title="Deploy and Monitor">
@@ -65,6 +67,7 @@ Simple 4 step process to start using prompts
 </Steps>
 
 ## How Prompts Work
+
 Understand how prompts work in Hyperleap AI under the hood
 
 <CardGroup cols={2}>
@@ -72,13 +75,17 @@ Understand how prompts work in Hyperleap AI under the hood
     Your prompt template receives inputs from your configured fields. These inputs are validated and prepared for processing.
   </Card>
 
-  <Card title="Variable Substitution" icon="arrows-rotate">
-    Dynamic variables in your prompt are replaced with actual values, allowing for flexible and reusable prompt templates.
-  </Card>
+{" "}
+<Card title="Variable Substitution" icon="arrows-rotate">
+  Dynamic variables in your prompt are replaced with actual values, allowing for
+  flexible and reusable prompt templates.
+</Card>
 
-  <Card title="Context Integration" icon="database">
-    Relevant context from your connected data sources is incorporated, enriching the prompt with necessary background information.
-  </Card>
+{" "}
+<Card title="Context Integration" icon="database">
+  Relevant context from your connected data sources is incorporated, enriching
+  the prompt with necessary background information.
+</Card>
 
   <Card title="AI Processing" icon="microchip">
     The final prompt is processed by our AI engine to generate responses, leveraging advanced language models for optimal results.
@@ -103,6 +110,7 @@ Understand how prompts work in Hyperleap AI under the hood
 </CardGroup>
 
 ## Troubleshooting
+
 Common issues you might encounter and how to resolve them:
 
 <AccordionGroup>
@@ -116,15 +124,13 @@ Common issues you might encounter and how to resolve them:
     - Use the Studio interface to validate variable substitution
   </Accordion>
 
-  <Accordion title="Context Length Exceeded">
-    **Issue**: Total prompt length including context exceeds model limits.
-    
-    **Solutions**:
-    - Reduce context length by summarizing or chunking data
-    - Use shorter prompt templates
-    - Consider using our automatic context truncation feature
-    - Monitor token count in Studio before deployment
-  </Accordion>
+{" "}
+<Accordion title="Context Length Exceeded">
+  **Issue**: Total prompt length including context exceeds model limits.
+  **Solutions**: - Reduce context length by summarizing or chunking data - Use
+  shorter prompt templates - Consider using our automatic context truncation
+  feature - Monitor token count in Studio before deployment
+</Accordion>
 
   <Accordion title="Response Format Mismatch">
     **Issue**: AI responses not matching expected format structure.
@@ -150,17 +156,17 @@ Common issues you might encounter and how to resolve them:
   <Card
     title="API Reference"
     icon="code"
-    href="/api-ref/prompts/overview"
+    href="/api-reference/prompts/overview"
   >
     Learn how to integrate prompts programmatically using our API
   </Card>
- <Card
+  <Card
     title="Hyperleap AI Studio"
     icon="browser"
     href="https://studio.hyperleapai.com"
   >
     Manage your prompts through our intuitive web interface - no coding required
-  </Card> 
+  </Card>
 </CardGroup>
 
 ## Need Help?
