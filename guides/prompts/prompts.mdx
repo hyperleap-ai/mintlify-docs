@@ -5,15 +5,15 @@ description: "Learn how to create, manage, and optimize AI prompts in Hyperleap 
 
 Prompts in Hyperleap AI are pre-configured instructions that guide AI responses for your specific use cases. They act as templates that can be reused across your organization, ensuring consistent and accurate AI interactions while reducing prompt engineering effort.
 
-Simple 4 step process to start using prompts
+Simple 4 step process to start using Prompts
 
 <Steps>
   <Step title="Create and Configure">
     Design your AI feature in our API Console.
-    - Define the prompt template, add dynamic variables or import pre-configured prompt from prompt library
+    - Define the Prompt template, add dynamic variables or import pre-configured Prompt from Prompt library
     - Set your preferred AI model
     - Add Sources to provide context
-    - Fine tune the prompt configuration
+    - Fine tune the Prompt configuration
 
     <Card
       title="Detailed Guide: Create and Configure Prompt"
@@ -26,8 +26,8 @@ Simple 4 step process to start using prompts
   </Step>
 
   <Step title="Save and Test">
-    After configuration, your prompt will have a dedicated REST API endpoint. You can test each prompt in our playground prior to deployment.
-    - After testing, you can publish the prompt to your teamspace for reuse by other users
+    After configuration, your Prompt will have a dedicated REST API endpoint. You can test each Prompt in our playground prior to deployment.
+    - After testing, you can publish the Prompt to your Workspace for reuse by other users
 
   </Step>
 
@@ -62,22 +62,22 @@ Simple 4 step process to start using prompts
   </Step>
 
   <Step title="Deploy and Monitor">
-    Ensure your prompts deliver consistent responses as configured. You can monitor usage, track costs, and adjust settings without code changes. Access audit logs to review interactions and gather feedback for continuous improvement.
+    Ensure your Prompts deliver consistent responses as configured. You can monitor usage, track costs, and adjust settings without code changes. Access audit logs to review interactions and gather feedback for continuous improvement.
   </Step>
 </Steps>
 
 ## How Prompts Work
 
-Understand how prompts work in Hyperleap AI under the hood
+Understand how Prompts work in Hyperleap AI under the hood
 
 <CardGroup cols={2}>
   <Card title="Input Processing" icon="inbox-in">
-    Your prompt template receives inputs from your configured fields. These inputs are validated and prepared for processing.
+    Your Prompt template receives inputs from your configured fields. These inputs are validated and prepared for processing.
   </Card>
 
 <Card title="Variable Substitution" icon="arrows-rotate">
-  Dynamic variables in your prompt are replaced with actual values, allowing for
-  flexible and reusable prompt templates.
+  Dynamic variables in your Prompt are replaced with actual values, allowing for
+  flexible and reusable Prompt templates.
 </Card>
 
 <Card title="Context Integration" icon="database">
@@ -86,7 +86,7 @@ Understand how prompts work in Hyperleap AI under the hood
 </Card>
 
   <Card title="AI Processing" icon="microchip">
-    The final prompt is processed by our AI engine to generate responses, leveraging advanced language models for optimal results.
+    The final Prompt is processed by our AI engine to generate responses, leveraging advanced language models for optimal results.
   </Card>
 </CardGroup>
 
@@ -116,16 +116,16 @@ Common issues you might encounter and how to resolve them:
     **Issue**: Prompt variables not being replaced with actual values.
     
     **Solutions**:
-    - Verify variable names match exactly in both prompt template and input
+    - Verify variable names match exactly in both Prompt template and input
     - Check for proper syntax: `{{variableName}}`
     - Ensure all required variables are provided in the request
     - Use the Studio interface to validate variable substitution
   </Accordion>
 
 <Accordion title="Context Length Exceeded">
-  **Issue**: Total prompt length including context exceeds model limits.
+  **Issue**: Total Prompt length including context exceeds model limits.
   **Solutions**: - Reduce context length by summarizing or chunking data - Use
-  shorter prompt templates - Consider using our automatic context truncation
+  shorter Prompt templates - Consider using our automatic context truncation
   feature - Monitor token count in Studio before deployment
 </Accordion>
 
@@ -133,9 +133,9 @@ Common issues you might encounter and how to resolve them:
     **Issue**: AI responses not matching expected format structure.
     
     **Solutions**:
-    - Use format instructions in your prompt template
+    - Use format instructions in your Prompt template
     - Implement response validation
-    - Test prompts in Studio before production use
+    - Test Prompts in Studio before production use
     - Consider using our structured output templates
   </Accordion>
 </AccordionGroup>
@@ -148,21 +148,21 @@ Common issues you might encounter and how to resolve them:
     icon="wand-magic-sparkles"
     href="https://studio.hyperleapai.com/prompt-library"
   >
-    Access our prompt library and use pre-configured prompts
+    Access our Prompt library and use pre-configured Prompts
   </Card>
   <Card
     title="API Reference"
     icon="code"
     href="/api-reference/prompts/overview"
   >
-    Learn how to integrate prompts programmatically using our API
+    Learn how to integrate Prompts programmatically using our API
   </Card>
   <Card
     title="Hyperleap AI Studio"
     icon="browser"
     href="https://studio.hyperleapai.com"
   >
-    Manage your prompts through our intuitive web interface - no coding required
+    Manage your Prompts through our intuitive web interface - no coding required
   </Card>
 </CardGroup>
 
