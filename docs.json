@@ -58,7 +58,8 @@
                 "pages": [
                   "guides/prompts/prompts",
                   "guides/prompts/create-prompt",
-                  "guides/prompts/integrate-prompt"
+                  "guides/prompts/integrate-prompt",
+                  "guides/prompts/prompt-engineering-best-practices"
                 ]
               },
               {
