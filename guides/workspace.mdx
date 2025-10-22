@@ -83,6 +83,106 @@ To work with Workspaces, you need:
 </Steps>
 
 
+## Workspace Roles & Permissions
+
+Workspaces use role-based access control to manage what users can do with resources like Prompts, Personas, and Chatbots. Here are the available roles and their permissions:
+
+<AccordionGroup>
+  <Accordion title="Owner" icon="crown">
+    **Full Control + Transfer Rights**
+
+    - Complete access to all workspace resources
+    - Can edit, publish, and delete all content
+    - Can transfer resources to other workspaces or organization
+    - Can manage workspace settings and members
+    - Can assign roles to other users
+
+    **Use Case**: Workspace creator or primary administrator
+  </Accordion>
+
+  <Accordion title="Admin" icon="shield-halved">
+    **Full Administrative Access**
+
+    - Can edit, publish, and delete resources
+    - Can manage workspace members and permissions
+    - Cannot transfer resource ownership
+
+    **Use Case**: Co-administrators who need full management capabilities
+  </Accordion>
+
+  <Accordion title="Engineer/Contributor" icon="code">
+    **Edit & Collaborate**
+
+    - Can view all workspace resources
+    - Can edit content (Prompts, Personas, Chatbots)
+    - Can save drafts and publish changes
+    - Cannot delete resources or manage permissions
+
+    **Use Case**: Team members actively building and refining AI resources
+  </Accordion>
+
+  <Accordion title="Reader" icon="glasses">
+    **Read-Only Access**
+
+    - Can view all workspace resources and configurations
+    - Can test and preview Chatbots
+    - Can view conversation logs and analytics
+    - Cannot edit, save, or modify any content
+
+    **Use Case**: Stakeholders who need visibility without editing rights
+  </Accordion>
+
+  <Accordion title="Guest" icon="eye">
+    **Run-Only Access**
+
+    - Can only test/preview Chatbots
+    - Cannot view resource configurations or settings
+    - Cannot access detail pages or analytics
+
+    **Use Case**: External testers or limited access scenarios
+  </Accordion>
+</AccordionGroup>
+
+### Permission Examples
+
+<Tabs>
+  <Tab title="Chatbots">
+    | Action | Owner | Admin | Engineer | Reader | Guest |
+    |--------|-------|-------|----------|--------|-------|
+    | Test Chatbot | ✓ | ✓ | ✓ | ✓ | ✓ |
+    | View Configuration | ✓ | ✓ | ✓ | ✓ | ✗ |
+    | Edit Settings | ✓ | ✓ | ✓ | ✗ | ✗ |
+    | Save Draft | ✓ | ✓ | ✓ | ✗ | ✗ |
+    | Publish | ✓ | ✓ | ✓ | ✗ | ✗ |
+    | Delete | ✓ | ✓ | ✗ | ✗ | ✗ |
+    | Transfer | ✓ | ✗ | ✗ | ✗ | ✗ |
+  </Tab>
+
+  <Tab title="Prompts">
+    | Action | Owner | Admin | Engineer | Reader | Guest |
+    |--------|-------|-------|----------|--------|-------|
+    | Run Prompt | ✓ | ✓ | ✓ | ✓ | ✓ |
+    | View Details | ✓ | ✓ | ✓ | ✓ | ✗ |
+    | Edit/Add Versions | ✓ | ✓ | ✓ | ✗ | ✗ |
+    | Delete | ✓ | ✓ | ✗ | ✗ | ✗ |
+    | Manage Permissions | ✓ | ✗ | ✗ | ✗ | ✗ |
+  </Tab>
+
+  <Tab title="Personas">
+    | Action | Owner | Admin | Engineer | Reader | Guest |
+    |--------|-------|-------|----------|--------|-------|
+    | Chat with Persona | ✓ | ✓ | ✓ | ✓ | ✓ |
+    | View Configuration | ✓ | ✓ | ✓ | ✓ | ✗ |
+    | Edit Persona | ✓ | ✓ | ✓ | ✗ | ✗ |
+    | Delete | ✓ | ✓ | ✗ | ✗ | ✗ |
+    | Activate/Deactivate | ✓ | ✓ | ✓ | ✗ | ✗ |
+  </Tab>
+</Tabs>
+
+<Note>
+**Organization Admins & Owners** automatically have full access to all workspace resources, bypassing workspace-level role restrictions.
+</Note>
+
 ## Troubleshooting
 
 <Accordion title="Permission Conflicts">
