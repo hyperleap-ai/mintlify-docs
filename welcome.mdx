@@ -6,104 +6,569 @@ mode: "custom"
 <div
   style={{
     width: "screen",
-    "@media (prefers-color-scheme: dark)": {
-      backgroundColor: "red",
-    },
   }}
 >
   <div
     style={{
       maxWidth: "64rem",
       margin: "0 auto",
-      padding: "5rem 1rem",
+      padding: "5rem 1rem 3rem",
       textAlign: "center",
     }}
   >
     <h1
       className="text-black dark:text-white"
       style={{
-        fontSize: "2.5rem",
+        fontSize: "3rem",
         lineHeight: "1.15",
         letterSpacing: "-0.02em",
-        fontWeight: 600,
-        marginBottom: "1rem",
+        fontWeight: 700,
+        marginBottom: "1.5rem",
       }}
     >
-      Welcome to Hyperleap AI
+      Build AI Solutions for Your Business
     </h1>
 
-    <p className="text-[#4b5563] dark:text-[#e5e7eb] text-lg max-w-2xl mx-auto mb-8">
-      Power your applications with unparalleled AI conversation, prompt
-      engineering, and feedback capabilities.
+    <p className="text-[#4b5563] dark:text-[#9ca3af] text-xl max-w-3xl mx-auto mb-12">
+      Hyperleap AI empowers businesses to develop AI solutions across three powerful modes — whether you're engaging customers, boosting team productivity, or integrating AI into your products.
     </p>
-
-    <div>
-      <a
-        href="/introduction"
-        style={{
-          fontSize: "0.9375rem",
-          fontWeight: 500,
-          color: "#0d9373",
-          textDecoration: "none",
-          transition: "all 0.2s ease",
-          borderBottom: "1px solid transparent",
-          paddingBottom: "2px",
-          "@media (prefers-color-scheme: dark)": {
-            color: "#0d9373",
-          },
-          ":hover": {
-            borderBottomColor: "#0d9373",
-          },
-        }}
-        onMouseOver={(e) => (e.target.style.color = "#0b7b5f")}
-        onMouseOut={(e) => (e.target.style.color = "#0d9373")}
-      >
-        Get Started
-      </a>
-    </div>
   </div>
 </div>
 
 <div
   style={{
-    padding: "4rem 2rem",
+    padding: "0 2rem 4rem",
+    maxWidth: "80rem",
+    margin: "0 auto",
+  }}
+>
+  <h2
+    className="text-black dark:text-white"
+    style={{
+      textAlign: "center",
+      fontSize: "2rem",
+      fontWeight: 600,
+      marginBottom: "3rem",
+    }}
+  >
+    Choose Your Mode
+  </h2>
+  <CardGroup cols={3}>
+    <Card
+      title="Bot Studio"
+      icon="comments"
+      href="/guides/chatbots/chatbots"
+      iconType="duotone"
+    >
+      **Customer-Facing AI Chatbots**
+
+      Deploy fully automated AI chatbots on your website and social channels. Capture leads 24/7, customize branding, and integrate with Facebook, Instagram, and WhatsApp.
+    </Card>
+    <Card
+      title="AI Studio"
+      icon="wrench"
+      href="/guides/tools"
+      iconType="duotone"
+    >
+      **Internal Team Productivity**
+
+      Empower your teams with 500+ AI Tools and 150+ AI Assistants that automate workflows from marketing to operations. Create custom tools in minutes.
+    </Card>
+    <Card
+      title="API Console"
+      icon="code"
+      href="/api-reference/introduction"
+      iconType="duotone"
+    >
+      **Product Integration**
+
+      Integrate AI capabilities into your products using REST APIs. Get state management, prompt versioning, and multi-model support out of the box.
+    </Card>
+  </CardGroup>
+</div>
+
+<div
+  style={{
+    padding: "3rem 2rem 4rem",
+    maxWidth: "80rem",
+    margin: "0 auto",
+  }}
+>
+  <h2
+    className="text-black dark:text-white"
+    style={{
+      textAlign: "center",
+      fontSize: "2rem",
+      fontWeight: 600,
+      marginBottom: "1rem",
+    }}
+  >
+    Dive Deep Into Each Mode
+  </h2>
+  <p className="text-[#4b5563] dark:text-[#9ca3af] text-center max-w-3xl mx-auto mb-8">
+    Explore what makes each mode unique and discover how to leverage them for your specific needs.
+  </p>
+
+  <Tabs>
+    <Tab title="Bot Studio">
+      <AccordionGroup>
+        <Accordion title="What is Bot Studio?" icon="circle-question">
+          Bot Studio is your complete solution for creating customer-facing AI chatbots. Unlike hybrid chatbot solutions where a human team sits behind the scenes, Bot Studio chatbots are 100% AI-driven — perfect for businesses looking to completely automate customer interactions without hiring support staff.
+
+          Your chatbots integrate seamlessly into websites using a single line of JavaScript, and any changes you make in the admin panel instantly reflect on the live chatbot.
+        </Accordion>
+
+        <Accordion title="Key Features" icon="stars">
+          **Full Brand Customization**
+          - Customize colors, fonts, headers, and backgrounds
+          - Upload custom logos and avatars
+          - Set custom welcome messages
+          - Design the chat button appearance
+          - Make it blend perfectly with your website
+
+          **Multi-Channel Integration**
+          - Website chatbot widget
+          - Facebook Messenger integration
+          - Instagram business profile integration
+          - WhatsApp business number integration
+          - Pause auto-responses and reply manually when needed
+
+          **Lead Capture & Management**
+          - Enable lead forms to collect visitor details before chat begins
+          - OTP validation to ensure genuine leads
+          - View complete conversation history for each lead
+          - Receive conversation transcripts via email
+          - Track which pages visitors are viewing
+
+          **Advanced Capabilities**
+          - **Assets**: Upload photos, documents, and web links that AI presents intelligently (e.g., show gallery, provide floor plans)
+          - **Agentic Workflows**: Configure backend automations when leads come in (push to CRM, alert teams, trigger workflows)
+          - **Hierarchical RAG**: Two-step retrieval for businesses with multiple products, properties, or branches — filters by category first, then dives deeper
+          - **Preset Behaviors**: Import pre-configured system prompts or build prompts dynamically based on your business type
+        </Accordion>
+
+        <Accordion title="Perfect For" icon="bullseye">
+          - Real estate agencies automating property inquiries
+          - Hospitality businesses handling booking questions
+          - E-commerce sites providing 24/7 product support
+          - Service providers qualifying leads automatically
+          - Any business wanting to capture leads while reducing support costs
+        </Accordion>
+
+        <Accordion title="What Bot Studio is NOT" icon="xmark">
+          - **Not a hybrid solution**: There's no option for human agents to take over mid-conversation
+          - **Not a workflow builder**: No drag-and-drop node editors — behavior is defined via system prompts like a GPT
+          - **Not limited to simple Q&A**: Agentic capabilities powered by MCPs enable complex workflows
+        </Accordion>
+      </AccordionGroup>
+
+      <CardGroup cols={2}>
+        <Card title="Start with Chatbots" icon="rocket" href="/guides/chatbots/chatbots">
+          Learn how to create your first chatbot
+        </Card>
+        <Card title="Explore Assets" icon="image" href="/guides/chatbots/assets">
+          Add rich media to your chatbot responses
+        </Card>
+      </CardGroup>
+    </Tab>
+
+    <Tab title="AI Studio">
+      <AccordionGroup>
+        <Accordion title="What is AI Studio?" icon="circle-question">
+          AI Studio provides no-code tools for internal team productivity. It consists of two main components:
+
+          **AI Tools** — Simple forms backed by AI prompts that generate outputs (non-conversational). Think of them as AI-powered utilities for specific tasks.
+
+          **AI Assistants** — Conversational AI that your teams can chat with, similar to ChatGPT but customized for your business and grounded in your company knowledge.
+
+          Both can be attached to Sources (your documents and knowledge bases) to ensure responses are accurate and relevant.
+        </Accordion>
+
+        <Accordion title="AI Tools in Detail" icon="wrench">
+          AI Tools are form-based, non-conversational AI experiences perfect for repetitive workflows:
+
+          **Customization**
+          - Define form fields (text boxes, text areas, dropdowns, etc.)
+          - Set field order, default values, and min/max ranges
+          - Fields feed into variables within your AI prompts
+          - Results can be saved or used immediately
+
+          **Pre-built Library**
+          - 500+ ready-to-use tools across departments
+          - Marketing: Blog post generators, social media content, email campaigns
+          - Sales: Proposal writers, outreach templates, pitch generators
+          - Operations: Report summarizers, data analyzers, process documents
+
+          **Use Cases**
+          - Generate product descriptions from specifications
+          - Create marketing content based on brand guidelines
+          - Summarize long documents or meeting notes
+          - Draft emails or customer responses
+          - Analyze data and generate insights
+        </Accordion>
+
+        <Accordion title="AI Assistants in Detail" icon="robot">
+          AI Assistants are conversational AI co-pilots tailored to your business workflows:
+
+          **Customization**
+          - Set simple or complex system messages
+          - Attach to company Sources for grounded responses
+          - Optional starting forms to gather context before chat begins
+          - Fully customizable per team or department needs
+
+          **Pre-built Library**
+          - 150+ ready-to-use assistants
+          - Department-specific: Marketing assistant, Sales assistant, HR assistant
+          - Role-specific: Content strategist, Data analyst, Customer success manager
+
+          **Use Cases**
+          - Onboarding assistant that knows your company handbook
+          - Product expert that answers questions from documentation
+          - Marketing strategist familiar with your brand voice
+          - Technical support assistant trained on your knowledge base
+        </Accordion>
+
+        <Accordion title="Perfect For" icon="bullseye">
+          - Marketing teams automating content creation
+          - Sales teams generating personalized outreach
+          - HR teams streamlining employee support
+          - Operations teams improving workflow efficiency
+          - Any team looking to reduce repetitive work with AI
+        </Accordion>
+      </AccordionGroup>
+
+      <CardGroup cols={2}>
+        <Card title="Browse AI Tools" icon="wrench" href="/guides/tools">
+          Explore 500+ tools or create your own
+        </Card>
+        <Card title="Explore AI Assistants" icon="robot" href="/guides/assistants">
+          Deploy 150+ assistants or build custom ones
+        </Card>
+      </CardGroup>
+    </Tab>
+
+    <Tab title="API Console">
+      <AccordionGroup>
+        <Accordion title="What is API Console?" icon="circle-question">
+          API Console is the developer-focused mode for integrating AI directly into your products. It's built on our v1 infrastructure that powers everything:
+
+          **Prompts API** — Non-conversational AI for one-off generations (the backend for AI Tools)
+
+          **Personas API** — Conversational AI with state and memory management (the backend for AI Assistants and Chatbots)
+
+          Both APIs provide robust prompt management, versioning, hyperparameter control, and multi-model support.
+        </Accordion>
+
+        <Accordion title="Prompts API" icon="terminal">
+          The Prompts API is designed for non-conversational, form-based AI workflows:
+
+          **Key Features**
+          - Store and version prompt configurations centrally
+          - Set default versions and switch between them
+          - Support multiple model providers (OpenAI, Anthropic, etc.)
+          - Manage hyperparameters (temperature, top-p, etc.)
+          - Attach to Sources for grounded responses
+          - Full audit logging and prompt lifecycle management
+
+          **Versioning**
+          - Create 10 different versions with 10 different prompts
+          - Each version can use different models or configurations
+          - Your application code stays the same — just reference version numbers
+          - Easy A/B testing and rollback capabilities
+
+          **Use Cases**
+          - Generate dynamic content in your SaaS application
+          - Process user inputs and return structured outputs
+          - Build AI features without managing infrastructure
+          - Centralize prompt management across your product
+        </Accordion>
+
+        <Accordion title="Personas API" icon="message">
+          The Personas API provides conversational AI with built-in intelligence:
+
+          **Key Features**
+          - Automatic state and memory management
+          - Multi-turn conversation handling
+          - Versioned persona configurations
+          - Multi-model provider support
+          - Attach to Sources for knowledge-grounded responses
+          - Session management and conversation history
+
+          **State Management**
+          - We handle conversation context automatically
+          - Memory persists across user sessions
+          - No need to build complex state logic
+          - Focus on use cases, not infrastructure
+
+          **Use Cases**
+          - Add conversational AI to your application
+          - Build customer support chat within your product
+          - Create AI companions or guides for users
+          - Develop interactive tutorials or onboarding experiences
+        </Accordion>
+
+        <Accordion title="Why Use API Console vs Higher-Level Tools?" icon="diagram-project">
+          **AI Tools & Assistants** provide no-code abstractions — great for business users but limited customization for developers.
+
+          **API Console** gives you:
+          - Full control over the user experience in your product
+          - Ability to embed AI anywhere in your application
+          - Versioning and prompt management out of the box
+          - Multi-model flexibility without code changes
+          - Custom integration with your existing workflows
+
+          **Trade-off**: Higher learning curve but unlimited flexibility.
+        </Accordion>
+
+        <Accordion title="Perfect For" icon="bullseye">
+          - SaaS products adding AI capabilities
+          - Developers building custom AI experiences
+          - Applications needing centralized prompt management
+          - Products requiring multi-model AI support
+          - Teams wanting to separate AI logic from application code
+        </Accordion>
+      </AccordionGroup>
+
+      <CardGroup cols={2}>
+        <Card title="Prompts API Reference" icon="terminal" href="/guides/prompts/prompts">
+          Learn how to use the Prompts API
+        </Card>
+        <Card title="Personas API Reference" icon="message" href="/guides/personas/personas">
+          Learn how to use the Personas API
+        </Card>
+      </CardGroup>
+    </Tab>
+  </Tabs>
+</div>
+
+<div
+  style={{
+    padding: "3rem 2rem",
+    maxWidth: "72rem",
+    margin: "0 auto",
+    borderTop: "1px solid #e5e7eb",
+  }}
+  className="dark:border-[#374151]"
+>
+  <h2
+    className="text-black dark:text-white"
+    style={{
+      textAlign: "center",
+      fontSize: "1.75rem",
+      fontWeight: 600,
+      marginBottom: "1rem",
+    }}
+  >
+    The Foundation: Sources
+  </h2>
+  <p className="text-[#4b5563] dark:text-[#9ca3af] text-center max-w-3xl mx-auto mb-8">
+    All three modes are powered by Sources — your business documents, web pages, and text snippets. Upload once, attach to any chatbot, tool, assistant, prompt, or persona.
+  </p>
+
+  <AccordionGroup>
+    <Accordion title="What are Sources?" icon="brain">
+      Sources are collections of your business knowledge. Each Source can contain:
+      - **Documents**: PDFs, Word files, text files, presentations
+      - **Web Pages**: Scraped content from URLs you provide
+      - **Text Snippets**: Manual text entries for specific information
+
+      Once uploaded, content is processed and indexed by our Retrieval Augmented Generation (RAG) engine.
+    </Accordion>
+
+    <Accordion title="How do Sources work?" icon="gears">
+      **Upload Once, Use Everywhere**
+      - Create a Source and upload your content
+      - Attach the Source to any prompt, persona, tool, assistant, or chatbot
+      - AI automatically retrieves relevant information during conversations or generations
+
+      **Grounded Responses**
+      - AI responses are based on your actual business information
+      - Reduces hallucinations and incorrect answers
+      - Provides accurate, contextually relevant responses
+
+      **Important Note**: Sources are not live-synced. If you update a document externally, you'll need to re-upload it to the Source.
+    </Accordion>
+
+    <Accordion title="Hierarchical RAG for Complex Businesses" icon="sitemap">
+      For businesses with multiple products, properties, or branches, standard RAG treats everything equally. Hyperleap AI offers Hierarchical RAG:
+
+      **Two-Step Retrieval Process**
+      1. **First Level**: AI determines which category/product/property the user is inquiring about
+      2. **Second Level**: AI dives deeper into that specific category to find detailed information
+
+      **Use Cases**
+      - Real estate with multiple properties
+      - Retail with multiple product lines
+      - Hospitality with multiple locations
+      - Organizations with multiple departments or divisions
+    </Accordion>
+  </AccordionGroup>
+
+  <div style={{ textAlign: "center", marginTop: "2rem" }}>
+    <a
+      href="/guides/sources"
+      style={{
+        display: "inline-block",
+        fontSize: "1rem",
+        fontWeight: 500,
+        color: "#0d9373",
+        textDecoration: "none",
+        transition: "all 0.2s ease",
+        borderBottom: "2px solid #0d9373",
+        paddingBottom: "4px",
+      }}
+      onMouseOver={(e) => (e.target.style.color = "#0b7b5f")}
+      onMouseOut={(e) => (e.target.style.color = "#0d9373")}
+    >
+      Learn More About Sources →
+    </a>
+  </div>
+</div>
+
+<div
+  style={{
+    padding: "3rem 2rem 4rem",
     maxWidth: "72rem",
     margin: "0 auto",
   }}
 >
   <h2
+    className="text-black dark:text-white"
     style={{
       textAlign: "center",
-      fontSize: "1.875rem",
-      fontWeight: 500,
-      marginBottom: "3rem",
-      color: "var(--tw-prose-headings)",
-      "@media (prefers-color-scheme: dark)": {
-        color: "#ffffff",
-      },
+      fontSize: "1.75rem",
+      fontWeight: 600,
+      marginBottom: "2.5rem",
     }}
   >
-    Explore the docs
+    Real-World Use Cases
   </h2>
-  <CardGroup cols={3}>
+  <CardGroup cols={2}>
     <Card
-      title="Introduction"
-      icon="house"
+      title="Bot Studio: Lead Generation Chatbot"
+      icon="user-plus"
+      iconType="duotone"
+    >
+      Deploy a chatbot with lead forms and OTP validation. Capture visitor details, qualify leads, answer FAQs automatically, and send conversation transcripts to your team. Customize branding to match your website perfectly.
+    </Card>
+    <Card
+      title="AI Studio: Marketing Content Generator"
+      icon="pen-fancy"
+      iconType="duotone"
+    >
+      Give your marketing team an AI Tool that generates blog posts, social media content, and email campaigns. Attach your brand guidelines as a Source to ensure on-brand output every time.
+    </Card>
+    <Card
+      title="Bot Studio: Hospitality Booking Assistant"
+      icon="hotel"
+      iconType="duotone"
+    >
+      Create an agentic chatbot that checks property availability via custom APIs, provides pricing based on dates, handles inquiries about amenities, and redirects to nearby properties — all using hierarchical RAG.
+    </Card>
+    <Card
+      title="API Console: Custom AI Features"
+      icon="puzzle-piece"
+      iconType="duotone"
+    >
+      Embed conversational AI or AI prompts directly into your SaaS product. Use versioning to A/B test different prompts, switch models without code changes, and manage everything centrally.
+    </Card>
+    <Card
+      title="AI Studio: Employee Onboarding Assistant"
+      icon="user-graduate"
+      iconType="duotone"
+    >
+      Create an AI Assistant attached to your employee handbook Source. New hires can ask questions about policies, benefits, and procedures — getting instant answers 24/7.
+    </Card>
+    <Card
+      title="Bot Studio: E-commerce Product Expert"
+      icon="shopping-cart"
+      iconType="duotone"
+    >
+      Deploy a chatbot that answers product questions using your catalog as a Source. Attach Assets for product images and specification sheets. Integrate with WhatsApp for customer support on mobile.
+    </Card>
+  </CardGroup>
+</div>
+
+<div
+  style={{
+    padding: "3rem 2rem 4rem",
+    maxWidth: "72rem",
+    margin: "0 auto",
+    borderTop: "1px solid #e5e7eb",
+  }}
+  className="dark:border-[#374151]"
+>
+  <h2
+    className="text-black dark:text-white"
+    style={{
+      textAlign: "center",
+      fontSize: "1.75rem",
+      fontWeight: 600,
+      marginBottom: "2.5rem",
+    }}
+  >
+    Model Support & Flexibility
+  </h2>
+  <p className="text-[#4b5563] dark:text-[#9ca3af] text-center max-w-3xl mx-auto mb-8">
+    Hyperleap AI supports multiple AI model providers, giving you flexibility and choice.
+  </p>
+
+  <CardGroup cols={3}>
+    <Card title="OpenAI" icon="openai" iconType="duotone">
+      **Primary Support**
+
+      Full production support for GPT-4, GPT-3.5, and other OpenAI models. Recommended for most use cases.
+    </Card>
+    <Card title="Anthropic" icon="robot" iconType="duotone">
+      **Experimental Support**
+
+      Claude models available for testing and specific use cases. Great for complex reasoning tasks.
+    </Card>
+    <Card title="Other Models" icon="brain" iconType="duotone">
+      **Experimental Support**
+
+      Additional model providers in experimental mode. Contact us for specific model requests.
+    </Card>
+  </CardGroup>
+</div>
+
+<div
+  style={{
+    padding: "3rem 2rem 5rem",
+    maxWidth: "72rem",
+    margin: "0 auto",
+    textAlign: "center",
+  }}
+>
+  <h2
+    className="text-black dark:text-white"
+    style={{
+      fontSize: "2rem",
+      fontWeight: 600,
+      marginBottom: "1rem",
+    }}
+  >
+    Ready to Get Started?
+  </h2>
+  <p className="text-[#4b5563] dark:text-[#9ca3af] max-w-2xl mx-auto mb-8">
+    Start with Bot Studio for customer engagement, AI Studio for team productivity, or API Console for product integration. You can expand to other modes anytime.
+  </p>
+  <CardGroup cols={2}>
+    <Card
+      title="Access Hyperleap AI Studio"
+      icon="laptop"
+      href="https://studio.hyperleapai.com"
+      iconType="duotone"
+    >
+      Jump into the Studio to start building your chatbots, tools, and assistants
+    </Card>
+    <Card
+      title="View Full Documentation"
+      icon="book"
       href="/introduction"
       iconType="duotone"
     >
-      Start using Hyperleap AI in minutes
-    </Card>
-    <Card
-      title="API Reference"
-      icon="code"
-      href="/api-reference/introduction"
-      iconType="duotone"
-    >
-      Integrate the Hyperleap AI API into your workflows
-    </Card>
-    <Card title="Guides" icon="book" href="/guides/" iconType="duotone">
-      Learn how to use Hyperleap AI effectively
+      Explore comprehensive guides and API references
     </Card>
   </CardGroup>
 </div>
