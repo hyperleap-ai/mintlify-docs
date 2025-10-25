@@ -162,12 +162,125 @@ Chatbots can be shared with your team through **Workspaces**, with role-based ac
 - Helpful tooltips explaining permission restrictions
 </Note>
 
+## Custom Triggers & Programmatic Control
+
+Beyond the default chatbot button, you can trigger the chatbot from any element on your website using custom buttons, links, or JavaScript.
+
+### Data Attribute Method (Recommended)
+
+The easiest way to control your chatbot is using the `data-aichatbot-invoke` attribute:
+
+```html
+<!-- Open chatbot on click -->
+<button data-aichatbot-invoke="open">Ask AI Assistant</button>
+
+<!-- Navigation link to open chat -->
+<a href="#" data-aichatbot-invoke="toggle">Need Help?</a>
+
+<!-- CTA button -->
+<div class="cta-button" data-aichatbot-invoke="open">
+  Chat with Sales
+</div>
+```
+
+**Supported Actions:**
+- `open` - Opens the chatbot
+- `close` - Closes the chatbot
+- `toggle` - Toggles chatbot state
+- Empty value defaults to `toggle`
+
+### JavaScript API Method
+
+For advanced use cases, use the global `HyperleapChatbot` API:
+
+```javascript
+// Open the chatbot
+window.HyperleapChatbot.open();
+
+// Close the chatbot
+window.HyperleapChatbot.close();
+
+// Toggle the chatbot
+window.HyperleapChatbot.toggle();
+```
+
+**Example Use Cases:**
+
+<Tabs>
+  <Tab title="Hero Section CTA">
+    ```html
+    <section class="hero">
+      <h1>Get instant answers</h1>
+      <button data-aichatbot-invoke="open" class="cta-primary">
+        Talk to Our AI Assistant
+      </button>
+    </section>
+    ```
+  </Tab>
+
+  <Tab title="Footer Help Link">
+    ```html
+    <footer>
+      <nav>
+        <a href="#" data-aichatbot-invoke="open">Customer Support</a>
+        <a href="#" data-aichatbot-invoke="open">Live Chat</a>
+      </nav>
+    </footer>
+    ```
+  </Tab>
+
+  <Tab title="Custom Event Handler">
+    ```html
+    <button id="special-offer">Get Exclusive Offer</button>
+
+    <script>
+      document.getElementById('special-offer').addEventListener('click', function() {
+        // Open chatbot after showing alert
+        alert('Chat with us to claim your offer!');
+        window.HyperleapChatbot.open();
+      });
+    </script>
+    ```
+  </Tab>
+
+  <Tab title="Time-Delayed Popup">
+    ```html
+    <script>
+      // Auto-open chatbot after 30 seconds
+      setTimeout(function() {
+        window.HyperleapChatbot.open();
+      }, 30000);
+    </script>
+    ```
+  </Tab>
+</Tabs>
+
+### Features
+
+<CardGroup cols={2}>
+  <Card title="Zero Configuration" icon="bolt">
+    Data attributes work automatically with no additional JavaScript needed
+  </Card>
+
+  <Card title="Dynamic Elements" icon="wand-magic-sparkles">
+    Works with elements added after page load (SPAs, lazy-loaded content)
+  </Card>
+
+  <Card title="Universal Compatibility" icon="check">
+    Works with any HTML element: buttons, anchors, divs, spans, etc.
+  </Card>
+
+  <Card title="Smart Defaults" icon="shield-check">
+    Automatically prevents default actions and handles duplicate listeners
+  </Card>
+</CardGroup>
+
 ## Troubleshooting
 
 <AccordionGroup>
   <Accordion title="Integration Issues">
     **Issue**: Chatbot not appearing on website.
-    
+
     **Solutions**:
     - Verify script is correctly placed in the website code
     - Ensure the chatbot is enabled in the website-chatbots page
@@ -177,7 +290,7 @@ Chatbots can be shared with your team through **Workspaces**, with role-based ac
 
   <Accordion title="Styling Concerns">
     **Issue**: Chatbot appearance doesn't match brand.
-    
+
     **Solutions**:
     - Review brand color settings
     - Check logo specifications
@@ -187,16 +300,27 @@ Chatbots can be shared with your team through **Workspaces**, with role-based ac
 
   <Accordion title="Lead Capture">
     **Issue**: Lead information not being collected.
-    
+
     **Solutions**:
     - Verify Lead Form configuration
     - Configure Email Notifications:
       - Set up email alerts for new leads
       - Enable chat transcript delivery after conversations
-      
+
       Note: System defaults to bot owner's email if none specified
     - Review OTP setup if enabled
     - Test lead notification system
+  </Accordion>
+
+  <Accordion title="Custom Triggers Not Working">
+    **Issue**: Data attributes or JavaScript API not working.
+
+    **Solutions**:
+    - Ensure chatbot script has fully loaded before calling API methods
+    - Verify the `data-aichatbot-invoke` attribute is spelled correctly
+    - Check browser console for JavaScript errors
+    - Confirm chatbot is enabled and published
+    - Test with the default chatbot button first to rule out configuration issues
   </Accordion>
 </AccordionGroup>
 

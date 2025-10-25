@@ -291,6 +291,67 @@ Follow these steps to create and configure a Chatbot:
 
     Place this code in the `<head>` tag of your website.
 
+    ### Programmatic Control
+
+    You can control the chatbot from your website using custom buttons or links:
+
+    <Tabs>
+      <Tab title="Data Attributes (Easiest)">
+        Add the `data-aichatbot-invoke` attribute to any HTML element:
+
+        ```html
+        <!-- Open chatbot on click -->
+        <button data-aichatbot-invoke="open">Ask AI Assistant</button>
+
+        <!-- Close chatbot on click -->
+        <button data-aichatbot-invoke="close">Close Chat</button>
+
+        <!-- Toggle chatbot on click -->
+        <a href="#" data-aichatbot-invoke="toggle">Chat with us</a>
+
+        <!-- Empty attribute defaults to toggle -->
+        <div data-aichatbot-invoke>Need Help?</div>
+        ```
+
+        Elements with this attribute are automatically bound when the chatbot loads. No additional JavaScript required!
+      </Tab>
+
+      <Tab title="JavaScript API">
+        Use the global `HyperleapChatbot` API for custom control:
+
+        ```javascript
+        // Open the chatbot
+        window.HyperleapChatbot.open();
+
+        // Close the chatbot
+        window.HyperleapChatbot.close();
+
+        // Toggle the chatbot
+        window.HyperleapChatbot.toggle();
+        ```
+
+        Example usage with custom button:
+
+        ```html
+        <button id="my-custom-button">Get Help</button>
+
+        <script>
+          document.getElementById('my-custom-button').addEventListener('click', function() {
+            window.HyperleapChatbot.open();
+          });
+        </script>
+        ```
+      </Tab>
+    </Tabs>
+
+    <Info>
+      **Features:**
+      - Works with any HTML element (buttons, anchors, divs, etc.)
+      - Supports dynamically added elements
+      - Automatically prevents default actions on links
+      - No duplicate event listeners
+    </Info>
+
   </Step>
 
 <Step title="Preview and Share">
